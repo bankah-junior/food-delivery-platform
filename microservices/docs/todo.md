@@ -283,46 +283,46 @@
 ## Epic 6: Containerization with Docker
 
 ### 6.1 Create Dockerfiles
-- [ ] Write Dockerfile for Customer Service:
-  - [ ] Stage 1: Maven build stage
-  - [ ] Stage 2: Runtime stage with JRE
-  - [ ] Expose port 8081
-  - [ ] Set health check
-- [ ] Write Dockerfile for Restaurant Service (port 8082)
-- [ ] Write Dockerfile for Order Service (port 8083)
-- [ ] Write Dockerfile for Delivery Service (port 8084)
-- [ ] Write Dockerfile for Eureka Server (port 8761)
-- [ ] Write Dockerfile for API Gateway (port 8080)
-- [ ] Create `.dockerignore` files for each service
+- [x] Write Dockerfile for Customer Service:
+  - [x] Stage 1: Maven build stage
+  - [x] Stage 2: Runtime stage with JRE
+  - [x] Expose port 8081
+  - [x] Set health check
+- [x] Write Dockerfile for Restaurant Service (port 8082)
+- [x] Write Dockerfile for Order Service (port 8083)
+- [x] Write Dockerfile for Delivery Service (port 8084)
+- [x] Write Dockerfile for Eureka Server (port 8761)
+- [x] Write Dockerfile for API Gateway (port 8080)
+- [x] Create `.dockerignore` files for each service
 
 ### 6.2 Create Docker-Specific Configuration
-- [ ] Create `application-docker.yml` for Customer Service:
-  - [ ] Database URL: `jdbc:postgresql://postgres:5432/customer_db`
-  - [ ] Eureka URL: `http://eureka-server:8761/eureka`
-  - [ ] RabbitMQ host: `rabbitmq`
-- [ ] Create `application-docker.yml` for Restaurant Service
-- [ ] Create `application-docker.yml` for Order Service
-- [ ] Create `application-docker.yml` for Delivery Service
-- [ ] Create `application-docker.yml` for Eureka Server
-- [ ] Create `application-docker.yml` for API Gateway
-- [ ] Use environment variables for sensitive values
+- [x] Create `application-docker.yml` for Customer Service:
+  - [x] Database URL: `jdbc:postgresql://postgres:5432/customer_db`
+  - [x] Eureka URL: `http://eureka-server:8761/eureka`
+  - [x] RabbitMQ host: `rabbitmq` (where applicable)
+- [x] Create `application-docker.yml` for Restaurant Service
+- [x] Create `application-docker.yml` for Order Service
+- [x] Create `application-docker.yml` for Delivery Service
+- [x] Create `application-docker.yml` for Eureka Server
+- [x] Create `application-docker.yml` for API Gateway
+- [x] Use environment variables for sensitive values
 
 ### 6.3 Create Docker Compose File
-- [ ] Create root `docker-compose.yml` with services:
-  - [ ] PostgreSQL (with 4 databases)
-  - [ ] RabbitMQ (with management plugin)
-  - [ ] Eureka Server
-  - [ ] Customer Service
-  - [ ] Restaurant Service
-  - [ ] Order Service
-  - [ ] Delivery Service
-  - [ ] API Gateway
-- [ ] Configure service dependencies with `depends_on`
-- [ ] Add health checks for each service
-- [ ] Set proper startup order
-- [ ] Configure volumes for PostgreSQL persistence
-- [ ] Expose necessary ports to host
-- [ ] Set up networks for service communication
+- [x] Create root `docker-compose.yml` with services:
+  - [x] PostgreSQL (with 4 databases)
+  - [x] RabbitMQ (with management plugin)
+  - [x] Eureka Server
+  - [x] Customer Service
+  - [x] Restaurant Service
+  - [x] Order Service
+  - [x] Delivery Service
+  - [x] API Gateway
+- [x] Configure service dependencies with `depends_on`
+- [x] Add health checks for each service
+- [x] Set proper startup order
+- [x] Configure volumes for PostgreSQL persistence
+- [x] Expose necessary ports to host
+- [x] Set up networks for service communication
 
 ### 6.4 Test Docker Setup
 - [ ] Build all Docker images

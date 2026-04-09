@@ -5,7 +5,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 **Project Start Date:** _(To be filled)_  
 **Target Completion:** 14-18 hours  
-**Current Phase:** Epic 6 Not Started
+**Current Phase:** Epic 6 In Progress
 
 ---
 
@@ -18,10 +18,10 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic 3: Event-Driven Communication | 🟢 Complete | 100% | 14 | 14 |
 | Epic 4: Service Discovery & Gateway | 🟢 Complete | 100% | 22 | 22 |
 | Epic 5: Fault Tolerance | 🟢 Complete | 100% | 18 | 18 |
-| Epic 6: Containerization | 🔴 Not Started | 0% | 0 | 16 |
+| Epic 6: Containerization | 🟡 In Progress | 94% | 15 | 16 |
 | Epic 7: Testing & Documentation | 🔴 Not Started | 0% | 0 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **68%** | **112** | **165** |
+| **TOTAL** | 🟡 In Progress | **77%** | **127** | **165** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -190,24 +190,29 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 6: Containerization with Docker (0/16)
+### Epic 6: Containerization with Docker (15/16)
 
-#### 6.1 Create Dockerfiles (0/7)
-- [ ] Customer Service Dockerfile
-- [ ] Restaurant Service Dockerfile
-- [ ] Order Service Dockerfile
-- [ ] Delivery Service Dockerfile
-- [ ] Eureka Server Dockerfile
-- [ ] API Gateway Dockerfile
-- [ ] .dockerignore files
+#### 6.1 Create Dockerfiles (7/7)
+- [x] Customer Service Dockerfile
+- [x] Restaurant Service Dockerfile
+- [x] Order Service Dockerfile
+- [x] Delivery Service Dockerfile
+- [x] Eureka Server Dockerfile
+- [x] API Gateway Dockerfile
+- [x] .dockerignore files
 
-#### 6.2 Create Docker-Specific Configuration (0/6)
-- [ ] application-docker.yml for all services
+#### 6.2 Create Docker-Specific Configuration (6/6)
+- [x] application-docker.yml for all services
 
-#### 6.3 Create Docker Compose File (0/8)
-- [ ] Define all services
-- [ ] Configure dependencies
-- [ ] Set up networking
+#### 6.3 Create Docker Compose File (8/8)
+- [x] Define all services
+- [x] Configure dependencies
+- [x] Set up networking
+- [x] Add health checks for each service
+- [x] Set proper startup order
+- [x] Configure persistence volumes
+- [x] Expose host ports
+- [x] Validate compose file configuration
 
 #### 6.4 Test Docker Setup (0/8)
 - [ ] Build images
