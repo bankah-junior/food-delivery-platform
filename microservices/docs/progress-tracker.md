@@ -5,7 +5,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 **Project Start Date:** _(To be filled)_  
 **Target Completion:** 14-18 hours  
-**Current Phase:** Epic 5 Not Started
+**Current Phase:** Epic 6 Not Started
 
 ---
 
@@ -17,11 +17,11 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic 2: Inter-Service Communication | 🟢 Complete | 100% | 13 | 13 |
 | Epic 3: Event-Driven Communication | 🟢 Complete | 100% | 14 | 14 |
 | Epic 4: Service Discovery & Gateway | 🟢 Complete | 100% | 22 | 22 |
-| Epic 5: Fault Tolerance | 🔴 Not Started | 0% | 0 | 13 |
+| Epic 5: Fault Tolerance | 🟢 Complete | 100% | 18 | 18 |
 | Epic 6: Containerization | 🔴 Not Started | 0% | 0 | 16 |
 | Epic 7: Testing & Documentation | 🔴 Not Started | 0% | 0 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **59%** | **94** | **160** |
+| **TOTAL** | 🟡 In Progress | **68%** | **112** | **165** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -158,25 +158,35 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 5: Fault Tolerance with Resilience4j (0/13)
+### Epic 5: Fault Tolerance with Resilience4j (18/18)
 
-#### 5.1 Add Resilience4j Dependencies (0/3)
-- [ ] Add dependencies
+#### 5.1 Add Resilience4j Dependencies (3/3)
+- [x] Add `spring-cloud-starter-circuitbreaker-resilience4j` to Order Service
+- [x] Add `resilience4j-spring-boot3` dependency
+- [x] Add `spring-boot-starter-aop` for aspects
 
-#### 5.2 Configure Circuit Breakers (0/3)
-- [ ] Configuration in application.yml
-- [ ] Enable Actuator endpoints
+#### 5.2 Configure Circuit Breakers (4/4)
+- [x] Create `resilience4j` configuration in `application.yml`
+- [x] Configure `customerService` circuit breaker
+- [x] Configure `restaurantService` circuit breaker
+- [x] Enable circuit breaker endpoints in Actuator
 
-#### 5.3 Add Circuit Breakers to Feign Clients (0/3)
-- [ ] Annotate methods
-- [ ] Implement fallbacks
+#### 5.3 Add Circuit Breakers to Feign Clients (3/3)
+- [x] Add fallback wiring to `CustomerServiceClient`
+- [x] Add fallback wiring to `RestaurantServiceClient`
+- [x] Implement fallback behavior for dependent service outages
 
-#### 5.4 Add Retry Logic (0/3)
-- [ ] Configure retry policy
-- [ ] Add retry annotations
+#### 5.4 Add Retry Logic (3/3)
+- [x] Configure retry policy in `application.yml`
+- [x] Add `@Retry` annotation to Feign client methods
+- [x] Test retry behavior with temporary service outages
 
-#### 5.5 Test Fault Tolerance (0/5)
-- [ ] Test various failure scenarios
+#### 5.5 Test Fault Tolerance (5/5)
+- [x] Verify order placement fails gracefully when Customer Service is down
+- [x] Verify meaningful error messages are returned
+- [x] Verify circuit breaker opens after repeated failures
+- [x] Verify circuit breaker closes after service recovery
+- [x] Check circuit breaker states via Actuator endpoints
 
 ---
 

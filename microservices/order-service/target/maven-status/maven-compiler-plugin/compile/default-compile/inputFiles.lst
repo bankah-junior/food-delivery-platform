@@ -1,8 +1,10 @@
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\CustomerServiceClient.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\CustomerServiceClientFallbackFactory.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\dto\RemoteCustomerResponse.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\dto\RemoteMenuItemResponse.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\dto\RemoteRestaurantResponse.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\RestaurantServiceClient.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\RestaurantServiceClientFallbackFactory.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\config\FeignConfig.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\config\FeignErrorDecoder.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\config\RabbitMqConfig.java

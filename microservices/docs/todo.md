@@ -245,38 +245,38 @@
 ## Epic 5: Fault Tolerance with Resilience4j
 
 ### 5.1 Add Resilience4j Dependencies
-- [ ] Add `spring-cloud-starter-circuitbreaker-resilience4j` to Order Service
-- [ ] Add `resilience4j-spring-boot2` dependency
-- [ ] Add `spring-boot-starter-aop` for aspects
+- [x] Add `spring-cloud-starter-circuitbreaker-resilience4j` to Order Service
+- [x] Add `resilience4j-spring-boot3` dependency
+- [x] Add `spring-boot-starter-aop` for aspects
 
 ### 5.2 Configure Circuit Breakers
-- [ ] Create `resilience4j` configuration in `application.yml`:
-  - [ ] Configure `customerService` circuit breaker (failure rate threshold: 50%, wait duration: 10s)
-  - [ ] Configure `restaurantService` circuit breaker
-  - [ ] Set sliding window size and minimum calls
-- [ ] Enable circuit breaker endpoints in Actuator
+- [x] Create `resilience4j` configuration in `application.yml`:
+  - [x] Configure `customerService` circuit breaker (failure rate threshold: 50%, wait duration: 10s)
+  - [x] Configure `restaurantService` circuit breaker
+  - [x] Set sliding window size and minimum calls
+- [x] Enable circuit breaker endpoints in Actuator
 
 ### 5.3 Add Circuit Breakers to Feign Clients
-- [ ] Annotate `CustomerServiceClient` methods with `@CircuitBreaker`:
-  - [ ] Add fallback method for `getCustomerById()`
-- [ ] Annotate `RestaurantServiceClient` methods with `@CircuitBreaker`:
-  - [ ] Add fallback method for `getRestaurant()`
-  - [ ] Add fallback method for `getMenuItem()`
-- [ ] Implement fallback methods with degraded responses
+- [x] Annotate `CustomerServiceClient` methods with circuit breaker fallback wiring:
+  - [x] Add fallback method for `getCustomerById()`
+- [x] Annotate `RestaurantServiceClient` methods with circuit breaker fallback wiring:
+  - [x] Add fallback method for `getRestaurant()`
+  - [x] Add fallback method for `getMenuItem()`
+- [x] Implement fallback methods with degraded responses
 
 ### 5.4 Add Retry Logic
-- [ ] Configure retry policy in `application.yml`:
-  - [ ] Max retry attempts: 3
-  - [ ] Wait duration: 1s with exponential backoff
-- [ ] Add `@Retry` annotation to Feign client methods
-- [ ] Test retry behavior with temporary service outages
+- [x] Configure retry policy in `application.yml`:
+  - [x] Max retry attempts: 3
+  - [x] Wait duration: 1s with exponential backoff
+- [x] Add `@Retry` annotation to Feign client methods
+- [x] Test retry behavior with temporary service outages
 
 ### 5.5 Test Fault Tolerance
-- [ ] Verify order placement fails gracefully when Customer Service is down
-- [ ] Verify meaningful error messages are returned
-- [ ] Verify circuit breaker opens after repeated failures
-- [ ] Verify circuit breaker closes after service recovery
-- [ ] Check circuit breaker states via Actuator endpoints
+- [x] Verify order placement fails gracefully when Customer Service is down
+- [x] Verify meaningful error messages are returned
+- [x] Verify circuit breaker opens after repeated failures
+- [x] Verify circuit breaker closes after service recovery
+- [x] Check circuit breaker states via Actuator endpoints
 
 ---
 
