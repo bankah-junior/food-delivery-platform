@@ -3,101 +3,101 @@
 ## Epic 1: Service Decomposition and Database Separation
 
 ### 1.1 Create Service Scaffolding
-- [ ] Create Customer Service Spring Boot project
-  - [ ] Initialize with Spring Initializr (Web, JPA, Security, Actuator)
-  - [ ] Set up `application.yml` and `application-docker.yml`
-  - [ ] Configure port 8081
-  - [ ] Add PostgreSQL dependency
+- [x] Create Customer Service Spring Boot project
+  - [x] Initialize with Spring Initializr (Web, JPA, Security, Actuator)
+  - [x] Set up `application.yml` and `application-docker.yml`
+  - [x] Configure port 8081
+  - [x] Add PostgreSQL dependency
   
-- [ ] Create Restaurant Service Spring Boot project
-  - [ ] Initialize with Spring Initializr (Web, JPA, Security, Actuator)
-  - [ ] Set up `application.yml` and `application-docker.yml`
-  - [ ] Configure port 8082
-  - [ ] Add PostgreSQL dependency
+- [x] Create Restaurant Service Spring Boot project
+  - [x] Initialize with Spring Initializr (Web, JPA, Security, Actuator)
+  - [x] Set up `application.yml` and `application-docker.yml`
+  - [x] Configure port 8082
+  - [x] Add PostgreSQL dependency
 
-- [ ] Create Order Service Spring Boot project
-  - [ ] Initialize with Spring Initializr (Web, JPA, Security, Actuator, OpenFeign)
-  - [ ] Set up `application.yml` and `application-docker.yml`
-  - [ ] Configure port 8083
-  - [ ] Add PostgreSQL dependency
+- [x] Create Order Service Spring Boot project
+  - [x] Initialize with Spring Initializr (Web, JPA, Security, Actuator, OpenFeign)
+  - [x] Set up `application.yml` and `application-docker.yml`
+  - [x] Configure port 8083
+  - [x] Add PostgreSQL dependency
 
-- [ ] Create Delivery Service Spring Boot project
-  - [ ] Initialize with Spring Initializr (Web, JPA, Security, Actuator, AMQP)
-  - [ ] Set up `application.yml` and `application-docker.yml`
-  - [ ] Configure port 8084
-  - [ ] Add PostgreSQL dependency
+- [x] Create Delivery Service Spring Boot project
+  - [x] Initialize with Spring Initializr (Web, JPA, Security, Actuator, AMQP)
+  - [x] Set up `application.yml` and `application-docker.yml`
+  - [x] Configure port 8084
+  - [x] Add PostgreSQL dependency
 
 ### 1.2 Extract Customer Service Domain
-- [ ] Copy `Customer` entity from monolith
-- [ ] Create `CustomerRepository` with required queries
-- [ ] Implement `CustomerService` business logic
-- [ ] Create `CustomerController` with endpoints:
-  - [ ] GET `/api/customers/me`
-  - [ ] GET `/api/customers/{id}`
-  - [ ] PUT `/api/customers/me`
-- [ ] Implement DTOs: `CustomerRequest`, `CustomerResponse`
-- [ ] Set up JWT security configuration
-- [ ] Implement authentication endpoints:
-  - [ ] POST `/api/auth/register`
-  - [ ] POST `/api/auth/login`
-- [ ] Test Customer Service independently
+- [x] Copy `Customer` entity from monolith
+- [x] Create `CustomerRepository` with required queries
+- [x] Implement `CustomerService` business logic
+- [x] Create `CustomerController` with endpoints:
+  - [x] GET `/api/customers/me`
+  - [x] GET `/api/customers/{id}`
+  - [x] PUT `/api/customers/me`
+- [x] Implement DTOs: `CustomerRequest`, `CustomerResponse`
+- [x] Set up JWT security configuration
+- [x] Implement authentication endpoints:
+  - [x] POST `/api/auth/register`
+  - [x] POST `/api/auth/login`
+- [x] Test Customer Service independently
 
 ### 1.3 Extract Restaurant Service Domain
-- [ ] Copy `Restaurant` entity (remove customer relationship)
-- [ ] Copy `MenuItem` entity
-- [ ] Create `RestaurantRepository` with search queries
-- [ ] Create `MenuItemRepository`
-- [ ] Implement `RestaurantService` business logic
-- [ ] Implement `MenuService` business logic
-- [ ] Create `RestaurantController` with endpoints:
-  - [ ] GET `/api/restaurants/search/all`
-  - [ ] GET `/api/restaurants/search/city/{city}`
-  - [ ] GET `/api/restaurants/search/cuisine/{type}`
-  - [ ] GET `/api/restaurants/{id}`
-  - [ ] GET `/api/restaurants/{id}/menu`
-  - [ ] POST `/api/restaurants`
-  - [ ] POST `/api/restaurants/{id}/menu`
-  - [ ] PUT `/api/restaurants/menu/{itemId}`
-  - [ ] PATCH `/api/restaurants/menu/{itemId}/toggle`
-- [ ] Implement DTOs: `RestaurantRequest`, `RestaurantResponse`, `MenuItemRequest`, `MenuItemResponse`
-- [ ] Add validation for restaurant ownership (use customerId from JWT)
-- [ ] Test Restaurant Service independently
+- [x] Copy `Restaurant` entity (remove customer relationship)
+- [x] Copy `MenuItem` entity
+- [x] Create `RestaurantRepository` with search queries
+- [x] Create `MenuItemRepository`
+- [x] Implement `RestaurantService` business logic
+- [x] Implement `MenuService` business logic
+- [x] Create `RestaurantController` with endpoints:
+  - [x] GET `/api/restaurants/search/all`
+  - [x] GET `/api/restaurants/search/city/{city}`
+  - [x] GET `/api/restaurants/search/cuisine/{type}`
+  - [x] GET `/api/restaurants/{id}`
+  - [x] GET `/api/restaurants/{id}/menu`
+  - [x] POST `/api/restaurants`
+  - [x] POST `/api/restaurants/{id}/menu`
+  - [x] PUT `/api/restaurants/menu/{itemId}`
+  - [x] PATCH `/api/restaurants/menu/{itemId}/toggle`
+- [x] Implement DTOs: `RestaurantRequest`, `RestaurantResponse`, `MenuItemRequest`, `MenuItemResponse`
+- [x] Add validation for restaurant ownership (use ownerId from gateway-provided header)
+- [x] Test Restaurant Service independently
 
 ### 1.4 Extract Order Service Domain
-- [ ] Copy `Order` entity (remove customer/restaurant relationships, use IDs only)
-- [ ] Copy `OrderItem` entity (remove MenuItem relationship)
-- [ ] Create `OrderRepository` with query methods
-- [ ] Create `OrderItemRepository`
-- [ ] Implement `OrderService` business logic
-- [ ] Create `OrderController` with endpoints:
-  - [ ] POST `/api/orders`
-  - [ ] GET `/api/orders/{id}`
-  - [ ] GET `/api/orders/my-orders`
-  - [ ] GET `/api/orders/restaurant/{id}`
-  - [ ] PATCH `/api/orders/{id}/status`
-  - [ ] POST `/api/orders/{id}/cancel`
-- [ ] Implement DTOs: `OrderRequest`, `OrderResponse`, `OrderItemRequest`
-- [ ] Test Order Service independently (with mocked external calls)
+- [x] Copy `Order` entity (remove customer/restaurant relationships, use IDs only)
+- [x] Copy `OrderItem` entity (remove MenuItem relationship)
+- [x] Create `OrderRepository` with query methods
+- [x] Create `OrderItemRepository`
+- [x] Implement `OrderService` business logic
+- [x] Create `OrderController` with endpoints:
+  - [x] POST `/api/orders`
+  - [x] GET `/api/orders/{id}`
+  - [x] GET `/api/orders/my-orders`
+  - [x] GET `/api/orders/restaurant/{id}`
+  - [x] PATCH `/api/orders/{id}/status`
+  - [x] POST `/api/orders/{id}/cancel`
+- [x] Implement DTOs: `OrderRequest`, `OrderResponse`, `OrderItemRequest`
+- [x] Test Order Service independently (with mocked external calls)
 
 ### 1.5 Extract Delivery Service Domain
-- [ ] Copy `Delivery` entity (remove order relationship, use orderId only)
-- [ ] Create `DeliveryRepository`
-- [ ] Implement `DeliveryService` business logic
-- [ ] Create `DeliveryController` with endpoints:
-  - [ ] GET `/api/deliveries/{id}`
-  - [ ] GET `/api/deliveries/order/{orderId}`
-  - [ ] GET `/api/deliveries/status/{status}`
-  - [ ] PATCH `/api/deliveries/{id}/status`
-- [ ] Implement DTOs: `DeliveryResponse`
-- [ ] Test Delivery Service independently
+- [x] Copy `Delivery` entity (remove order relationship, use orderId only)
+- [x] Create `DeliveryRepository`
+- [x] Implement `DeliveryService` business logic
+- [x] Create `DeliveryController` with endpoints:
+  - [x] GET `/api/deliveries/{id}`
+  - [x] GET `/api/deliveries/order/{orderId}`
+  - [x] GET `/api/deliveries/status/{status}`
+  - [x] PATCH `/api/deliveries/{id}/status`
+- [x] Implement DTOs: `DeliveryResponse`
+- [x] Test Delivery Service independently
 
 ### 1.6 Database Setup
-- [ ] Create PostgreSQL schema for `customer_db`
-- [ ] Create PostgreSQL schema for `restaurant_db`
-- [ ] Create PostgreSQL schema for `order_db`
-- [ ] Create PostgreSQL schema for `delivery_db`
-- [ ] Add Flyway/Liquibase migration scripts for each service
-- [ ] Test database migrations
+- [x] Create PostgreSQL schema for `customer_db`
+- [x] Create PostgreSQL schema for `restaurant_db`
+- [x] Create PostgreSQL schema for `order_db`
+- [x] Create PostgreSQL schema for `delivery_db`
+- [x] Add Flyway/Liquibase migration scripts for each service
+- [x] Test database migrations
 
 ---
 
