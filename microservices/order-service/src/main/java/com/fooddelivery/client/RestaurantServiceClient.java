@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 
 @FeignClient(
         name = "restaurant-service",
-        url = "${services.restaurant.url}",
         configuration = FeignConfig.class
 )
 public interface RestaurantServiceClient {

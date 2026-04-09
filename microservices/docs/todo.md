@@ -187,26 +187,26 @@
 ## Epic 4: Service Discovery and API Gateway
 
 ### 4.1 Create Eureka Server
-- [ ] Initialize Eureka Server Spring Boot project
-- [ ] Add `spring-cloud-starter-netflix-eureka-server` dependency
-- [ ] Enable Eureka Server with `@EnableEurekaServer`
-- [ ] Configure `application.yml`:
-  - [ ] Port: 8761
-  - [ ] Disable self-registration
-  - [ ] Set hostname and service URL
-- [ ] Test Eureka dashboard at `http://localhost:8761`
+- [x] Initialize Eureka Server Spring Boot project
+- [x] Add `spring-cloud-starter-netflix-eureka-server` dependency
+- [x] Enable Eureka Server with `@EnableEurekaServer`
+- [x] Configure `application.yml`:
+  - [x] Port: 8761
+  - [x] Disable self-registration
+  - [x] Set hostname and service URL
+- [x] Test Eureka dashboard at `http://localhost:8761`
 
 ### 4.2 Register Services with Eureka
-- [ ] Add Eureka Client dependency to all four microservices
-- [ ] Configure Eureka client in each service's `application.yml`:
-  - [ ] Set `spring.application.name` (customer-service, restaurant-service, order-service, delivery-service)
-  - [ ] Set Eureka server URL
-  - [ ] Configure instance metadata
-- [ ] Update Feign clients to use service names instead of URLs:
-  - [ ] `@FeignClient(name = "customer-service")`
-  - [ ] `@FeignClient(name = "restaurant-service")`
-- [ ] Enable load balancing with Eureka
-- [ ] Test service registration in Eureka dashboard
+- [x] Add Eureka Client dependency to all four microservices
+- [x] Configure Eureka client in each service's `application.yml`:
+  - [x] Set `spring.application.name` (customer-service, restaurant-service, order-service, delivery-service)
+  - [x] Set Eureka server URL
+  - [x] Configure instance metadata
+- [x] Update Feign clients to use service names instead of URLs:
+  - [x] `@FeignClient(name = "customer-service")`
+  - [x] `@FeignClient(name = "restaurant-service")`
+- [x] Enable load balancing with Eureka
+- [x] Test service registration in Eureka dashboard
 
 ### 4.3 Create API Gateway
 - [ ] Initialize Spring Cloud Gateway project
