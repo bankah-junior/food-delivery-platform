@@ -53,7 +53,7 @@ public class CustomerService {
 
         customerRepository.save(customer);
 
-        String token = jwtUtil.generateToken(customer.getUsername(), customer.getRole().name());
+        String token = jwtUtil.generateToken(customer.getId(), customer.getUsername(), customer.getRole().name());
         return new AuthResponse(token, customer.getId(), customer.getUsername(), customer.getRole().name());
     }
 
@@ -65,7 +65,7 @@ public class CustomerService {
             throw new UnauthorizedException("Invalid credentials");
         }
 
-        String token = jwtUtil.generateToken(customer.getUsername(), customer.getRole().name());
+        String token = jwtUtil.generateToken(customer.getId(), customer.getUsername(), customer.getRole().name());
         return new AuthResponse(token, customer.getId(), customer.getUsername(), customer.getRole().name());
     }
 

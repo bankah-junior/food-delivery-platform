@@ -50,11 +50,14 @@ public class GatewayJwtAuthenticationFilter implements GlobalFilter, Ordered {
 
         Claims claims = claimsOptional.get();
         String username = claims.getSubject();
+        Object userIdClaim = claims.get("userId");
+        String userId = userIdClaim == null ? "" : String.valueOf(userIdClaim);
         String role = claims.get("role", String.class);
 
         ServerHttpRequest requestWithUserHeaders = exchange.getRequest()
                 .mutate()
-                .header("X-User-Id", username == null ? "" : username)
+            .header("X-User-Id", userId)
+            .header("X-User-Username", username == null ? "" : username)
                 .header("X-User-Role", role == null ? "" : role)
                 .build();
 

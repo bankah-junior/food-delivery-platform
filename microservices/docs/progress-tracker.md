@@ -5,7 +5,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 **Project Start Date:** _(To be filled)_  
 **Target Completion:** 14-18 hours  
-**Current Phase:** Epic 4 Complete
+**Current Phase:** Epic 5 Not Started
 
 ---
 
@@ -16,12 +16,12 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic 1: Service Decomposition | 🟢 Complete | 100% | 45 | 45 |
 | Epic 2: Inter-Service Communication | 🟢 Complete | 100% | 13 | 13 |
 | Epic 3: Event-Driven Communication | 🟢 Complete | 100% | 14 | 14 |
-| Epic 4: Service Discovery & Gateway | 🟢 Complete | 100% | 18 | 18 |
+| Epic 4: Service Discovery & Gateway | 🟢 Complete | 100% | 22 | 22 |
 | Epic 5: Fault Tolerance | 🔴 Not Started | 0% | 0 | 13 |
 | Epic 6: Containerization | 🔴 Not Started | 0% | 0 | 16 |
 | Epic 7: Testing & Documentation | 🔴 Not Started | 0% | 0 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **58%** | **90** | **156** |
+| **TOTAL** | 🟡 In Progress | **59%** | **94** | **160** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -123,7 +123,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 4: Service Discovery and API Gateway (18/18)
+### Epic 4: Service Discovery and API Gateway (22/22)
 
 #### 4.1 Create Eureka Server (5/5)
 - [x] Project setup
@@ -150,10 +150,11 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 - [x] Logging filter
 - [x] Gateway filter behavior validated via service build
 
-#### 4.5 Update Services for Gateway (0/4)
-- [ ] Remove individual JWT validation
-- [ ] Update CORS
-- [ ] Testing through gateway
+#### 4.5 Update Services for Gateway (4/4)
+- [x] Remove individual JWT validation
+- [x] Read user context from gateway-added headers
+- [x] Update CORS configuration to allow gateway origin
+- [x] Test all endpoints through gateway at `http://localhost:8080`
 
 ---
 

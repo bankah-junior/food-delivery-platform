@@ -235,10 +235,10 @@
 - [x] Test authentication and routing through gateway
 
 ### 4.5 Update Services for Gateway
-- [ ] Remove JWT validation from individual services (trust gateway)
-- [ ] Read user context from gateway-added headers
-- [ ] Update CORS configuration to allow gateway origin
-- [ ] Test all endpoints through gateway at `http://localhost:8080`
+- [x] Remove JWT validation from individual services (trust gateway)
+- [x] Read user context from gateway-added headers
+- [x] Update CORS configuration to allow gateway origin
+- [x] Test all endpoints through gateway at `http://localhost:8080`
 
 ---
 

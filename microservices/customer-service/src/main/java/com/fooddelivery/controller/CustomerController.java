@@ -4,7 +4,6 @@ import com.fooddelivery.dto.CustomerResponse;
 import com.fooddelivery.dto.CustomerUpdateRequest;
 import com.fooddelivery.service.CustomerService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,8 +17,9 @@ public class CustomerController {
     }
 
     @GetMapping("/me")
-    public ResponseEntity<CustomerResponse> getMyProfile(Authentication auth) {
-        return ResponseEntity.ok(customerService.getProfile(auth.getName()));
+    public ResponseEntity<CustomerResponse> getMyProfile(
+            @RequestHeader("X-User-Username") String username) {
+        return ResponseEntity.ok(customerService.getProfile(username));
     }
 
     @GetMapping("/{id}")
@@ -29,7 +29,8 @@ public class CustomerController {
 
     @PutMapping("/me")
     public ResponseEntity<CustomerResponse> updateProfile(
-            Authentication auth, @RequestBody CustomerUpdateRequest request) {
-        return ResponseEntity.ok(customerService.updateProfile(auth.getName(), request));
+            @RequestHeader("X-User-Username") String username,
+            @RequestBody CustomerUpdateRequest request) {
+        return ResponseEntity.ok(customerService.updateProfile(username, request));
     }
 }

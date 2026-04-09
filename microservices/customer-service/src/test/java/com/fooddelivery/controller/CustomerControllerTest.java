@@ -8,8 +8,6 @@ import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.test.web.servlet.request.RequestPostProcessor;
 
 import static org.hamcrest.Matchers.equalTo;
 
@@ -56,14 +54,8 @@ class CustomerControllerTest {
     @Test
     @DisplayName("GET /api/customers/me - Success")
     void getMyProfileReturnsCurrentCustomer() {
-        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken("john", "n/a");
-        RequestPostProcessor withAuth = request -> {
-            request.setUserPrincipal(auth);
-            return request;
-        };
-
         RestAssuredMockMvc.given()
-                .postProcessors(withAuth)
+                .header("X-User-Username", "john")
                 .when()
                 .get("/api/customers/me")
                 .then()
@@ -87,11 +79,6 @@ class CustomerControllerTest {
     @Test
     @DisplayName("PUT /api/customers/me - Success")
     void updateProfileReturnsUpdatedCustomer() {
-        UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken("john", "n/a");
-        RequestPostProcessor withAuth = request -> {
-            request.setUserPrincipal(auth);
-            return request;
-        };
         String body = """
                 {
                   "firstName": "John",
@@ -100,7 +87,7 @@ class CustomerControllerTest {
                 """;
 
         RestAssuredMockMvc.given()
-            .postProcessors(withAuth)
+            .header("X-User-Username", "john")
                 .contentType(ContentType.JSON)
                 .body(body)
                 .when()
