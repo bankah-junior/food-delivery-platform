@@ -209,19 +209,19 @@
 - [x] Test service registration in Eureka dashboard
 
 ### 4.3 Create API Gateway
-- [ ] Initialize Spring Cloud Gateway project
-- [ ] Add dependencies:
-  - [ ] `spring-cloud-starter-gateway`
-  - [ ] `spring-cloud-starter-netflix-eureka-client`
-  - [ ] `spring-boot-starter-security`
-- [ ] Configure routing in `application.yml`:
-  - [ ] Route `/api/customers/**` → `lb://customer-service`
-  - [ ] Route `/api/restaurants/**` → `lb://restaurant-service`
-  - [ ] Route `/api/orders/**` → `lb://order-service`
-  - [ ] Route `/api/deliveries/**` → `lb://delivery-service`
-  - [ ] Route `/api/auth/**` → `lb://customer-service`
-- [ ] Set gateway port to 8080
-- [ ] Register gateway with Eureka
+- [x] Initialize Spring Cloud Gateway project
+- [x] Add dependencies:
+  - [x] `spring-cloud-starter-gateway`
+  - [x] `spring-cloud-starter-netflix-eureka-client`
+  - [x] `spring-boot-starter-security`
+- [x] Configure routing in `application.yml`:
+  - [x] Route `/api/customers/**` → `lb://customer-service`
+  - [x] Route `/api/restaurants/**` → `lb://restaurant-service`
+  - [x] Route `/api/orders/**` → `lb://order-service`
+  - [x] Route `/api/deliveries/**` → `lb://delivery-service`
+  - [x] Route `/api/auth/**` → `lb://customer-service`
+- [x] Set gateway port to 8080
+- [x] Register gateway with Eureka
 
 ### 4.4 Implement Gateway Filters
 - [ ] Create JWT authentication filter:

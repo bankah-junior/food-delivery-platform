@@ -16,12 +16,12 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic 1: Service Decomposition | 🟢 Complete | 100% | 45 | 45 |
 | Epic 2: Inter-Service Communication | 🟢 Complete | 100% | 13 | 13 |
 | Epic 3: Event-Driven Communication | 🟢 Complete | 100% | 14 | 14 |
-| Epic 4: Service Discovery & Gateway | 🟡 In Progress | 56% | 10 | 18 |
+| Epic 4: Service Discovery & Gateway | 🟡 In Progress | 78% | 14 | 18 |
 | Epic 5: Fault Tolerance | 🔴 Not Started | 0% | 0 | 13 |
 | Epic 6: Containerization | 🔴 Not Started | 0% | 0 | 16 |
 | Epic 7: Testing & Documentation | 🔴 Not Started | 0% | 0 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **53%** | **82** | **156** |
+| **TOTAL** | 🟡 In Progress | **55%** | **86** | **156** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -123,7 +123,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 4: Service Discovery and API Gateway (10/18)
+### Epic 4: Service Discovery and API Gateway (14/18)
 
 #### 4.1 Create Eureka Server (5/5)
 - [x] Project setup
@@ -139,10 +139,10 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 - [x] Enable discovery-based load balancing
 - [x] Validate service startup and tests
 
-#### 4.3 Create API Gateway (0/4)
-- [ ] Project setup
-- [ ] Routing configuration
-- [ ] Gateway registration
+#### 4.3 Create API Gateway (4/4)
+- [x] Project setup
+- [x] Routing configuration
+- [x] Gateway registration
 
 #### 4.4 Implement Gateway Filters (0/4)
 - [ ] JWT authentication filter
