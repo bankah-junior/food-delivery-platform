@@ -1,13 +1,16 @@
 package com.fooddelivery.service;
 
+import com.fooddelivery.config.RabbitMqConfig;
 import com.fooddelivery.dto.CreateDeliveryRequest;
 import com.fooddelivery.dto.DeliveryResponse;
 import com.fooddelivery.dto.DeliveryStatusUpdateRequest;
+import com.fooddelivery.event.DeliveryStatusUpdatedEvent;
 import com.fooddelivery.exception.ResourceNotFoundException;
 import com.fooddelivery.model.Delivery;
 import com.fooddelivery.repository.DeliveryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,9 +30,11 @@ public class DeliveryService {
     };
 
     private final DeliveryRepository deliveryRepository;
+    private final RabbitTemplate rabbitTemplate;
 
-    public DeliveryService(DeliveryRepository deliveryRepository) {
+    public DeliveryService(DeliveryRepository deliveryRepository, RabbitTemplate rabbitTemplate) {
         this.deliveryRepository = deliveryRepository;
+        this.rabbitTemplate = rabbitTemplate;
     }
 
     @Transactional
@@ -89,7 +94,10 @@ public class DeliveryService {
             }
         }
 
-        return DeliveryResponse.fromEntity(deliveryRepository.save(delivery));
+        Delivery savedDelivery = deliveryRepository.save(delivery);
+
+        publishDeliveryStatusUpdated(savedDelivery);
+        return DeliveryResponse.fromEntity(savedDelivery);
     }
 
     @Transactional
@@ -97,7 +105,36 @@ public class DeliveryService {
         Delivery delivery = deliveryRepository.findById(deliveryId)
                 .orElseThrow(() -> new ResourceNotFoundException("Delivery", "id", deliveryId));
         delivery.setStatus(Delivery.DeliveryStatus.FAILED);
-        deliveryRepository.save(delivery);
+        Delivery savedDelivery = deliveryRepository.save(delivery);
+        publishDeliveryStatusUpdated(savedDelivery);
         log.info("Delivery {} cancelled", deliveryId);
+    }
+
+    @Transactional
+    public void cancelDeliveryByOrderId(Long orderId) {
+        deliveryRepository.findByOrderId(orderId).ifPresentOrElse(delivery -> {
+            delivery.setStatus(Delivery.DeliveryStatus.FAILED);
+            Delivery savedDelivery = deliveryRepository.save(delivery);
+            publishDeliveryStatusUpdated(savedDelivery);
+            log.info("Delivery {} cancelled for orderId={}", savedDelivery.getId(), orderId);
+        }, () -> log.warn("No delivery found to cancel for orderId={}", orderId));
+    }
+
+    private void publishDeliveryStatusUpdated(Delivery delivery) {
+        DeliveryStatusUpdatedEvent event = DeliveryStatusUpdatedEvent.builder()
+                .deliveryId(delivery.getId())
+                .orderId(delivery.getOrderId())
+                .status(delivery.getStatus().name())
+                .timestamp(LocalDateTime.now())
+                .build();
+
+        rabbitTemplate.convertAndSend(
+                RabbitMqConfig.FOOD_DELIVERY_EXCHANGE,
+                RabbitMqConfig.ROUTING_KEY_DELIVERY_STATUS_UPDATED,
+                event
+        );
+
+        log.info("Published DeliveryStatusUpdatedEvent deliveryId={} orderId={} status={}",
+                delivery.getId(), delivery.getOrderId(), delivery.getStatus());
     }
 }

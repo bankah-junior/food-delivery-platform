@@ -5,7 +5,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 **Project Start Date:** _(To be filled)_  
 **Target Completion:** 14-18 hours  
-**Current Phase:** Epic 2 Complete
+**Current Phase:** Epic 3 Complete
 
 ---
 
@@ -15,13 +15,13 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 |------|--------|----------|-----------|-------|
 | Epic 1: Service Decomposition | 🟢 Complete | 100% | 45 | 45 |
 | Epic 2: Inter-Service Communication | 🟢 Complete | 100% | 13 | 13 |
-| Epic 3: Event-Driven Communication | 🔴 Not Started | 0% | 0 | 14 |
+| Epic 3: Event-Driven Communication | 🟢 Complete | 100% | 14 | 14 |
 | Epic 4: Service Discovery & Gateway | 🔴 Not Started | 0% | 0 | 18 |
 | Epic 5: Fault Tolerance | 🔴 Not Started | 0% | 0 | 13 |
 | Epic 6: Containerization | 🔴 Not Started | 0% | 0 | 16 |
 | Epic 7: Testing & Documentation | 🔴 Not Started | 0% | 0 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **37%** | **58** | **156** |
+| **TOTAL** | 🟡 In Progress | **46%** | **72** | **156** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -92,29 +92,34 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 3: Event-Driven Communication (0/14)
+### Epic 3: Event-Driven Communication (14/14)
 
-#### 3.1 RabbitMQ Setup (0/5)
-- [ ] Add dependencies
-- [ ] Configuration classes
-- [ ] Queue and exchange setup
+#### 3.1 RabbitMQ Setup (5/5)
+- [x] Add dependencies
+- [x] Configuration classes
+- [x] Queue and exchange setup
+- [x] RabbitMQ connection properties in `application.yml`
+- [x] JSON message converter setup
 
-#### 3.2 Define Event DTOs (0/3)
-- [ ] OrderPlacedEvent
-- [ ] OrderCancelledEvent
-- [ ] DeliveryStatusUpdatedEvent
+#### 3.2 Define Event DTOs (3/3)
+- [x] OrderPlacedEvent
+- [x] OrderCancelledEvent
+- [x] DeliveryStatusUpdatedEvent
 
-#### 3.3 Implement Event Publishers (0/3)
-- [ ] OrderEventPublisher
-- [ ] Update OrderService
+#### 3.3 Implement Event Publishers (3/3)
+- [x] OrderEventPublisher
+- [x] Update OrderService
+- [x] Add publisher logging
 
-#### 3.4 Implement Event Consumers (0/3)
-- [ ] OrderEventListener in Delivery Service
-- [ ] DeliveryEventListener in Order Service
+#### 3.4 Implement Event Consumers (3/3)
+- [x] OrderEventListener in Delivery Service
+- [x] DeliveryEventListener in Order Service
+- [x] Delivery status sync to Order status
 
-#### 3.5 Remove Synchronous Delivery Creation (0/3)
-- [ ] Remove synchronous calls
-- [ ] Verify async behavior
+#### 3.5 Remove Synchronous Delivery Creation (3/3)
+- [x] Remove synchronous calls
+- [x] Verify async behavior
+- [x] Validate listener-driven flow with tests
 
 ---
 

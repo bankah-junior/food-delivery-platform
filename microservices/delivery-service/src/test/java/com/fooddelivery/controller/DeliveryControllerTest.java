@@ -20,7 +20,7 @@ class DeliveryControllerTest {
 
     @BeforeEach
     void setUp() {
-        deliveryService = new DeliveryService(null) {
+        deliveryService = new DeliveryService(null, null) {
             @Override
             public DeliveryResponse getById(Long deliveryId) {
                 DeliveryResponse response = new DeliveryResponse();

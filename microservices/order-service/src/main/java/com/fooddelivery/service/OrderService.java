@@ -17,6 +17,8 @@ import com.fooddelivery.exception.UnauthorizedException;
 import com.fooddelivery.model.Order;
 import com.fooddelivery.model.OrderItem;
 import com.fooddelivery.repository.OrderRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
@@ -31,19 +33,23 @@ import java.util.Set;
 @Service
 public class OrderService {
 
+    private static final Logger logger = LoggerFactory.getLogger(OrderService.class);
     private static final int DEFAULT_ESTIMATED_DELIVERY_MINUTES = 30;
 
     private final OrderRepository orderRepository;
     private final CustomerServiceClient customerServiceClient;
     private final RestaurantServiceClient restaurantServiceClient;
+    private final OrderEventPublisher orderEventPublisher;
 
     public OrderService(
             OrderRepository orderRepository,
             CustomerServiceClient customerServiceClient,
-            RestaurantServiceClient restaurantServiceClient) {
+            RestaurantServiceClient restaurantServiceClient,
+            OrderEventPublisher orderEventPublisher) {
         this.orderRepository = orderRepository;
         this.customerServiceClient = customerServiceClient;
         this.restaurantServiceClient = restaurantServiceClient;
+        this.orderEventPublisher = orderEventPublisher;
     }
 
     @Transactional
@@ -119,7 +125,12 @@ public class OrderService {
         }
 
         order.setTotalAmount(totalAmount);
-        return OrderResponse.fromEntity(orderRepository.save(order));
+        Order savedOrder = orderRepository.save(order);
+
+        orderEventPublisher.publishOrderPlaced(savedOrder);
+        logger.info("Order placed and event published for orderId={}", savedOrder.getId());
+
+        return OrderResponse.fromEntity(savedOrder);
     }
 
     @Transactional(readOnly = true)
@@ -155,6 +166,22 @@ public class OrderService {
     }
 
     @Transactional
+    public void handleDeliveryStatusUpdated(Long orderId, String deliveryStatus) {
+        Order order = orderRepository.findById(orderId)
+                .orElseThrow(() -> new ResourceNotFoundException("Order", "id", orderId));
+
+        Order.OrderStatus mappedStatus = mapOrderStatusFromDelivery(deliveryStatus);
+        if (mappedStatus == null) {
+            logger.warn("No order status mapping for deliveryStatus={} orderId={}", deliveryStatus, orderId);
+            return;
+        }
+
+        order.setStatus(mappedStatus);
+        orderRepository.save(order);
+        logger.info("Order status synchronized from delivery event: orderId={} status={}", orderId, mappedStatus);
+    }
+
+    @Transactional
     public OrderResponse cancelOrder(Long orderId, Long customerId) {
         Order order = orderRepository.findById(orderId)
                 .orElseThrow(() -> new ResourceNotFoundException("Order", "id", orderId));
@@ -168,7 +195,12 @@ public class OrderService {
         }
 
         order.setStatus(Order.OrderStatus.CANCELLED);
-        return OrderResponse.fromEntity(orderRepository.save(order));
+        Order savedOrder = orderRepository.save(order);
+
+        orderEventPublisher.publishOrderCancelled(savedOrder.getId(), "Cancelled by customer");
+        logger.info("Order cancelled and event published for orderId={}", savedOrder.getId());
+
+        return OrderResponse.fromEntity(savedOrder);
     }
 
     private OrderItem toOrderItem(OrderItemRequest request, Order order, BigDecimal unitPrice) {
@@ -182,5 +214,19 @@ public class OrderService {
                 .subtotal(subtotal)
                 .specialInstructions(request.getSpecialInstructions())
                 .build();
+    }
+
+    private Order.OrderStatus mapOrderStatusFromDelivery(String deliveryStatus) {
+        if (deliveryStatus == null) {
+            return null;
+        }
+
+        return switch (deliveryStatus.toUpperCase()) {
+            case "ASSIGNED" -> Order.OrderStatus.READY_FOR_PICKUP;
+            case "PICKED_UP", "IN_TRANSIT" -> Order.OrderStatus.OUT_FOR_DELIVERY;
+            case "DELIVERED" -> Order.OrderStatus.DELIVERED;
+            case "FAILED" -> Order.OrderStatus.CANCELLED;
+            default -> null;
+        };
     }
 }

@@ -21,7 +21,7 @@ class OrderControllerTest {
 
     @BeforeEach
     void setUp() {
-        orderService = new OrderService(null, null, null) {
+        orderService = new OrderService(null, null, null, null) {
             @Override
             public OrderResponse getOrderById(Long orderId) {
                 OrderResponse response = new OrderResponse();

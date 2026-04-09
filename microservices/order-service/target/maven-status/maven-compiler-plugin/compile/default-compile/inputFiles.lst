@@ -5,12 +5,16 @@ C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\foo
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\client\RestaurantServiceClient.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\config\FeignConfig.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\config\FeignErrorDecoder.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\config\RabbitMqConfig.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\config\SecurityConfig.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\controller\OrderController.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\dto\OrderItemRequest.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\dto\OrderResponse.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\dto\OrderStatusUpdateRequest.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\dto\PlaceOrderRequest.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\event\DeliveryStatusUpdatedEvent.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\event\OrderCancelledEvent.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\event\OrderPlacedEvent.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\exception\CustomerNotFoundException.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\exception\GlobalExceptionHandler.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\exception\MenuItemNotFoundException.java
@@ -23,4 +27,6 @@ C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\foo
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\OrderServiceApplication.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\repository\OrderItemRepository.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\repository\OrderRepository.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\service\DeliveryEventListener.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\service\OrderEventPublisher.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\order-service\src\main\java\com\fooddelivery\service\OrderService.java

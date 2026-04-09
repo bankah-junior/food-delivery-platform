@@ -140,47 +140,47 @@
 ## Epic 3: Event-Driven Communication
 
 ### 3.1 RabbitMQ Setup
-- [ ] Add Spring Boot AMQP dependency to Order and Delivery services
-- [ ] Create RabbitMQ configuration class with:
-  - [ ] Topic exchange: `food-delivery-exchange`
-  - [ ] Queue: `delivery.order-placed`
-  - [ ] Queue: `delivery.order-cancelled`
-  - [ ] Queue: `order.delivery-status-updated`
-  - [ ] Dead letter queue: `dlq.delivery`
-- [ ] Configure RabbitMQ connection properties in `application.yml`
-- [ ] Set up message converter (JSON)
+- [x] Add Spring Boot AMQP dependency to Order and Delivery services
+- [x] Create RabbitMQ configuration class with:
+  - [x] Topic exchange: `food-delivery-exchange`
+  - [x] Queue: `delivery.order-placed`
+  - [x] Queue: `delivery.order-cancelled`
+  - [x] Queue: `order.delivery-status-updated`
+  - [x] Dead letter queue: `dlq.delivery`
+- [x] Configure RabbitMQ connection properties in `application.yml`
+- [x] Set up message converter (JSON)
 
 ### 3.2 Define Event DTOs
-- [ ] Create `OrderPlacedEvent`:
-  - [ ] Fields: orderId, customerId, restaurantId, items, totalAmount, deliveryAddress
-- [ ] Create `OrderCancelledEvent`:
-  - [ ] Fields: orderId, reason
-- [ ] Create `DeliveryStatusUpdatedEvent`:
-  - [ ] Fields: deliveryId, orderId, status, timestamp
+- [x] Create `OrderPlacedEvent`:
+  - [x] Fields: orderId, customerId, restaurantId, items, totalAmount, deliveryAddress
+- [x] Create `OrderCancelledEvent`:
+  - [x] Fields: orderId, reason
+- [x] Create `DeliveryStatusUpdatedEvent`:
+  - [x] Fields: deliveryId, orderId, status, timestamp
 
 ### 3.3 Implement Event Publishers
-- [ ] In Order Service, create `OrderEventPublisher`:
-  - [ ] Method: `publishOrderPlaced(Order order)`
-  - [ ] Method: `publishOrderCancelled(Long orderId, String reason)`
-- [ ] Update `OrderService.placeOrder()` to publish `OrderPlacedEvent`
-- [ ] Update `OrderService.cancelOrder()` to publish `OrderCancelledEvent`
-- [ ] Add logging for published events
+- [x] In Order Service, create `OrderEventPublisher`:
+  - [x] Method: `publishOrderPlaced(Order order)`
+  - [x] Method: `publishOrderCancelled(Long orderId, String reason)`
+- [x] Update `OrderService.placeOrder()` to publish `OrderPlacedEvent`
+- [x] Update `OrderService.cancelOrder()` to publish `OrderCancelledEvent`
+- [x] Add logging for published events
 
 ### 3.4 Implement Event Consumers
-- [ ] In Delivery Service, create `OrderEventListener`:
-  - [ ] Method: `handleOrderPlaced(OrderPlacedEvent event)` with `@RabbitListener`
-  - [ ] Method: `handleOrderCancelled(OrderCancelledEvent event)`
-- [ ] Implement automatic delivery creation logic
-- [ ] In Order Service, create `DeliveryEventListener`:
-  - [ ] Method: `handleDeliveryStatusUpdated(DeliveryStatusUpdatedEvent event)`
-- [ ] Update order status based on delivery status
-- [ ] Add error handling and dead letter queue processing
+- [x] In Delivery Service, create `OrderEventListener`:
+  - [x] Method: `handleOrderPlaced(OrderPlacedEvent event)` with `@RabbitListener`
+  - [x] Method: `handleOrderCancelled(OrderCancelledEvent event)`
+- [x] Implement automatic delivery creation logic
+- [x] In Order Service, create `DeliveryEventListener`:
+  - [x] Method: `handleDeliveryStatusUpdated(DeliveryStatusUpdatedEvent event)`
+- [x] Update order status based on delivery status
+- [x] Add error handling and dead letter queue processing
 
 ### 3.5 Remove Synchronous Delivery Creation
-- [ ] Remove `DeliveryService` injection from `OrderService` in monolith
-- [ ] Remove `createDeliveryForOrder()` synchronous call
-- [ ] Verify order placement returns immediately without blocking
-- [ ] Test async delivery creation via events
+- [x] Remove `DeliveryService` injection from `OrderService` in monolith
+- [x] Remove `createDeliveryForOrder()` synchronous call
+- [x] Verify order placement returns immediately without blocking
+- [x] Test async delivery creation via events
 
 ---
 
