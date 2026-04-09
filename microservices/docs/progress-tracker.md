@@ -5,7 +5,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 **Project Start Date:** _(To be filled)_  
 **Target Completion:** 14-18 hours  
-**Current Phase:** Epic 1 Complete
+**Current Phase:** Epic 2 Complete
 
 ---
 
@@ -14,14 +14,14 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic | Status | Progress | Completed | Total |
 |------|--------|----------|-----------|-------|
 | Epic 1: Service Decomposition | 🟢 Complete | 100% | 45 | 45 |
-| Epic 2: Inter-Service Communication | 🔴 Not Started | 0% | 0 | 13 |
+| Epic 2: Inter-Service Communication | 🟢 Complete | 100% | 13 | 13 |
 | Epic 3: Event-Driven Communication | 🔴 Not Started | 0% | 0 | 14 |
 | Epic 4: Service Discovery & Gateway | 🔴 Not Started | 0% | 0 | 18 |
 | Epic 5: Fault Tolerance | 🔴 Not Started | 0% | 0 | 13 |
 | Epic 6: Containerization | 🔴 Not Started | 0% | 0 | 16 |
 | Epic 7: Testing & Documentation | 🔴 Not Started | 0% | 0 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **29%** | **45** | **156** |
+| **TOTAL** | 🟡 In Progress | **37%** | **58** | **156** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -71,22 +71,24 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 2: Inter-Service Communication (0/13)
+### Epic 2: Inter-Service Communication (13/13)
 
-#### 2.1 Implement OpenFeign Clients (0/5)
-- [ ] Add dependencies
-- [ ] Create Feign interfaces
-- [ ] Configure Feign
+#### 2.1 Implement OpenFeign Clients (5/5)
+- [x] Add dependencies
+- [x] Create Feign interfaces
+- [x] Configure Feign
 
-#### 2.2 Replace Direct Calls with REST Calls (0/3)
-- [ ] Update OrderService
-- [ ] Update RestaurantController
-- [ ] Remove cross-domain dependencies
+#### 2.2 Replace Direct Calls with REST Calls (3/3)
+- [x] Update OrderService
+- [x] Update RestaurantController
+- [x] Remove cross-domain dependencies
 
-#### 2.3 Error Handling for Service Calls (0/4)
-- [ ] Exception classes
-- [ ] Global exception handler
-- [ ] Feign exception mapping
+#### 2.3 Error Handling for Service Calls (5/5)
+- [x] Exception classes
+- [x] Global exception handler
+- [x] Feign exception mapping
+- [x] Meaningful error messages
+- [x] Downstream service outage mapping (HTTP 503)
 
 ---
 
@@ -341,9 +343,9 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 ## Next Steps
 
 ### Immediate Actions (This Session)
-1. Extract Restaurant Service from monolith
-2. Complete database separation
-3. Move into inter-service communication
+1. Implement Epic 2.2 in Order Service (`placeOrder` Feign validations)
+2. Add Feign error handling and mapping (Epic 2.3)
+3. Re-run integration tests for inter-service scenarios
 
 ### Short Term (Next 1-3 Days)
 1. Complete service decomposition

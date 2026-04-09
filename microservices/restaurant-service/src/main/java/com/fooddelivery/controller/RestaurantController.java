@@ -57,34 +57,34 @@ public class RestaurantController {
 
     @PostMapping
     public ResponseEntity<RestaurantResponse> create(
-            @RequestHeader(value = "X-User-Id", required = false) Long ownerId,
+            @RequestHeader("X-User-Id") Long customerId,
             @Valid @RequestBody RestaurantRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(restaurantService.createRestaurant(ownerId, request));
+                .body(restaurantService.createRestaurant(customerId, request));
     }
 
     @PostMapping("/{restaurantId}/menu")
     public ResponseEntity<MenuItemResponse> addMenuItem(
             @PathVariable Long restaurantId,
-            @RequestHeader(value = "X-User-Id", required = false) Long ownerId,
+            @RequestHeader("X-User-Id") Long customerId,
             @Valid @RequestBody MenuItemRequest request) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(restaurantService.addMenuItem(restaurantId, ownerId, request));
+                .body(restaurantService.addMenuItem(restaurantId, customerId, request));
     }
 
     @PutMapping("/menu/{itemId}")
     public ResponseEntity<MenuItemResponse> updateMenuItem(
             @PathVariable Long itemId,
-            @RequestHeader(value = "X-User-Id", required = false) Long ownerId,
+            @RequestHeader("X-User-Id") Long customerId,
             @Valid @RequestBody MenuItemRequest request) {
-        return ResponseEntity.ok(restaurantService.updateMenuItem(itemId, ownerId, request));
+        return ResponseEntity.ok(restaurantService.updateMenuItem(itemId, customerId, request));
     }
 
     @PatchMapping("/menu/{itemId}/toggle")
     public ResponseEntity<Void> toggleAvailability(
             @PathVariable Long itemId,
-            @RequestHeader(value = "X-User-Id", required = false) Long ownerId) {
-        restaurantService.toggleMenuItemAvailability(itemId, ownerId);
+            @RequestHeader("X-User-Id") Long customerId) {
+        restaurantService.toggleMenuItemAvailability(itemId, customerId);
         return ResponseEntity.noContent().build();
     }
 }

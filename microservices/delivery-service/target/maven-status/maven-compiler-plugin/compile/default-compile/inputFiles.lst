@@ -6,6 +6,7 @@ C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\foo
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\delivery-service\src\main\java\com\fooddelivery\dto\DeliveryStatusUpdateRequest.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\delivery-service\src\main\java\com\fooddelivery\exception\GlobalExceptionHandler.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\delivery-service\src\main\java\com\fooddelivery\exception\ResourceNotFoundException.java
+C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\delivery-service\src\main\java\com\fooddelivery\exception\ServiceUnavailableException.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\delivery-service\src\main\java\com\fooddelivery\model\Delivery.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\delivery-service\src\main\java\com\fooddelivery\repository\DeliveryRepository.java
 C:\Users\AnthonyBekoeBankah\OneDrive - AmaliTech gGmbH\Desktop\Java Projects\food-delivery-platform\microservices\delivery-service\src\main\java\com\fooddelivery\service\DeliveryService.java

@@ -3,6 +3,7 @@ com\fooddelivery\controller\RestaurantController.class
 com\fooddelivery\dto\RestaurantRequest.class
 com\fooddelivery\dto\RestaurantResponse.class
 com\fooddelivery\model\Restaurant$RestaurantBuilder.class
+com\fooddelivery\exception\ServiceUnavailableException.class
 com\fooddelivery\service\RestaurantService.class
 com\fooddelivery\model\MenuItem.class
 com\fooddelivery\repository\RestaurantRepository.class

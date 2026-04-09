@@ -104,35 +104,36 @@
 ## Epic 2: Inter-Service Communication
 
 ### 2.1 Implement OpenFeign Clients
-- [ ] Add Spring Cloud OpenFeign dependency to Order Service
-- [ ] Create `CustomerServiceClient` Feign interface
-  - [ ] Add method: `getCustomerById(Long id)`
-- [ ] Create `RestaurantServiceClient` Feign interface
-  - [ ] Add method: `getRestaurant(Long id)`
-  - [ ] Add method: `getMenuItem(Long id)`
-  - [ ] Add method: `validateMenuItems(List<Long> itemIds)`
-- [ ] Enable Feign clients with `@EnableFeignClients`
-- [ ] Configure Feign logging level
+- [x] Add Spring Cloud OpenFeign dependency to Order Service
+- [x] Create `CustomerServiceClient` Feign interface
+  - [x] Add method: `getCustomerById(Long id)`
+- [x] Create `RestaurantServiceClient` Feign interface
+  - [x] Add method: `getRestaurantById(Long id)`
+  - [x] Add method: `getMenuItem(Long restaurantId, Long itemId)`
+  - [x] Add method: `validateMenuItems(Long restaurantId, List<Long> itemIds)`
+- [x] Enable Feign clients with `@EnableFeignClients`
+- [x] Configure Feign logging level
 
 ### 2.2 Replace Direct Calls with REST Calls
-- [ ] Update `OrderService.placeOrder()`:
-  - [ ] Call Customer Service to validate customer and get delivery address
-  - [ ] Call Restaurant Service to validate menu items and prices
-  - [ ] Calculate total amount from API response
-  - [ ] Remove direct repository calls
-- [ ] Update `RestaurantController` ownership validation:
-  - [ ] Use JWT customerId instead of CustomerRepository
-- [ ] Remove all cross-domain repository dependencies
+- [x] Update `OrderService.placeOrder()`:
+  - [x] Call Customer Service to validate customer and get delivery address
+  - [x] Call Restaurant Service to validate menu items and prices
+  - [x] Calculate total amount from API response
+  - [x] Remove direct repository calls
+- [x] Update `RestaurantController` ownership validation:
+  - [x] Use JWT customerId instead of CustomerRepository
+- [x] Remove all cross-domain repository dependencies
 
 ### 2.3 Error Handling for Service Calls
-- [ ] Implement custom exception classes:
-  - [ ] `ServiceUnavailableException`
-  - [ ] `CustomerNotFoundException`
-  - [ ] `RestaurantNotFoundException`
-  - [ ] `MenuItemNotFoundException`
-- [ ] Add `@ControllerAdvice` global exception handler in each service
-- [ ] Map Feign exceptions to proper HTTP status codes
-- [ ] Return meaningful error messages to clients
+- [x] Implement custom exception classes:
+  - [x] `ServiceUnavailableException`
+  - [x] `CustomerNotFoundException`
+  - [x] `RestaurantNotFoundException`
+  - [x] `MenuItemNotFoundException`
+- [x] Add `@ControllerAdvice` global exception handler in each service
+- [x] Map Feign exceptions to proper HTTP status codes
+- [x] Return meaningful error messages to clients
+- [x] Map downstream service outages to HTTP 503 responses
 
 ---
 

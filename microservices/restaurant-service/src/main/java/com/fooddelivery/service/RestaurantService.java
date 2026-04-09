@@ -27,9 +27,9 @@ public class RestaurantService {
     }
 
     @Transactional
-    public RestaurantResponse createRestaurant(Long ownerId, RestaurantRequest request) {
-        if (ownerId == null) {
-            throw new IllegalArgumentException("ownerId is required");
+    public RestaurantResponse createRestaurant(Long customerId, RestaurantRequest request) {
+        if (customerId == null) {
+            throw new IllegalArgumentException("customerId is required");
         }
 
         Restaurant restaurant = Restaurant.builder()
@@ -40,7 +40,7 @@ public class RestaurantService {
                 .city(request.getCity())
                 .phone(request.getPhone())
                 .estimatedDeliveryMinutes(request.getEstimatedDeliveryMinutes())
-                .ownerId(ownerId)
+                .ownerId(customerId)
                 .build();
 
         return RestaurantResponse.fromEntity(restaurantRepository.save(restaurant));
@@ -78,11 +78,11 @@ public class RestaurantService {
     }
 
     @Transactional
-    public MenuItemResponse addMenuItem(Long restaurantId, Long ownerId, MenuItemRequest request) {
+    public MenuItemResponse addMenuItem(Long restaurantId, Long customerId, MenuItemRequest request) {
         Restaurant restaurant = restaurantRepository.findById(restaurantId)
                 .orElseThrow(() -> new ResourceNotFoundException("Restaurant", "id", restaurantId));
 
-        ensureOwnership(restaurant, ownerId);
+        ensureOwnership(restaurant, customerId);
 
         MenuItem menuItem = MenuItem.builder()
                 .name(request.getName())
@@ -105,11 +105,11 @@ public class RestaurantService {
     }
 
     @Transactional
-    public MenuItemResponse updateMenuItem(Long itemId, Long ownerId, MenuItemRequest request) {
+    public MenuItemResponse updateMenuItem(Long itemId, Long customerId, MenuItemRequest request) {
         MenuItem menuItem = menuItemRepository.findById(itemId)
                 .orElseThrow(() -> new ResourceNotFoundException("MenuItem", "id", itemId));
 
-        ensureOwnership(menuItem.getRestaurant(), ownerId);
+        ensureOwnership(menuItem.getRestaurant(), customerId);
 
         if (request.getName() != null) {
             menuItem.setName(request.getName());
@@ -131,22 +131,22 @@ public class RestaurantService {
     }
 
     @Transactional
-    public void toggleMenuItemAvailability(Long itemId, Long ownerId) {
+    public void toggleMenuItemAvailability(Long itemId, Long customerId) {
         MenuItem menuItem = menuItemRepository.findById(itemId)
                 .orElseThrow(() -> new ResourceNotFoundException("MenuItem", "id", itemId));
 
-        ensureOwnership(menuItem.getRestaurant(), ownerId);
+        ensureOwnership(menuItem.getRestaurant(), customerId);
 
         menuItem.setAvailable(!menuItem.isAvailable());
         menuItemRepository.save(menuItem);
     }
 
-    private void ensureOwnership(Restaurant restaurant, Long ownerId) {
-        if (ownerId == null) {
-            throw new IllegalArgumentException("ownerId is required");
+    private void ensureOwnership(Restaurant restaurant, Long customerId) {
+        if (customerId == null) {
+            throw new IllegalArgumentException("customerId is required");
         }
 
-        if (!ownerId.equals(restaurant.getOwnerId())) {
+        if (!customerId.equals(restaurant.getOwnerId())) {
             throw new UnauthorizedException("You don't own this restaurant");
         }
     }

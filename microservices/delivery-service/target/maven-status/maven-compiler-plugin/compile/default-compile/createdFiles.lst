@@ -4,6 +4,7 @@ com\fooddelivery\dto\DeliveryStatusUpdateRequest.class
 com\fooddelivery\model\Delivery$DeliveryBuilder.class
 com\fooddelivery\model\Delivery$DeliveryStatus.class
 com\fooddelivery\service\DeliveryService$1.class
+com\fooddelivery\exception\ServiceUnavailableException.class
 com\fooddelivery\dto\CreateDeliveryRequest.class
 com\fooddelivery\exception\ResourceNotFoundException.class
 com\fooddelivery\model\Delivery.class

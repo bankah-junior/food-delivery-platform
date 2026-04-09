@@ -7,7 +7,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/order_db
     username: ${DB_USER:postgres}
-    password: ${DB_PASSWORD:postgres}
+    password: ${DB_PASSWORD:admin}
   jpa:
     hibernate:
       ddl-auto: validate
@@ -19,9 +19,23 @@ spring:
 
   flyway:
     enabled: true
+  cloud:
+    openfeign:
+      client:
+        config:
+          default:
+            connectTimeout: 5000
+            readTimeout: 10000
+            loggerLevel: basic
 
 management:
   endpoints:
     web:
       exposure:
         include: health,info
+
+services:
+  customer:
+    url: ${CUSTOMER_SERVICE_URL:http://localhost:8081}
+  restaurant:
+    url: ${RESTAURANT_SERVICE_URL:http://localhost:8082}
