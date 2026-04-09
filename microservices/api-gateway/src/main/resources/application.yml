@@ -40,3 +40,12 @@ eureka:
       defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
   instance:
     prefer-ip-address: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:myMonolithSecretKeyThatShouldBeExternalizedInMicroservices2024FoodDelivery!}
+
+gateway:
+  rate-limit:
+    orders:
+      requests-per-minute: 10

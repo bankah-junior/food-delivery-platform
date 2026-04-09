@@ -224,15 +224,15 @@
 - [x] Register gateway with Eureka
 
 ### 4.4 Implement Gateway Filters
-- [ ] Create JWT authentication filter:
-  - [ ] Extract token from Authorization header
-  - [ ] Validate JWT signature and expiration
-  - [ ] Add user information to request headers
-  - [ ] Allow unauthenticated paths: `/api/auth/**`, `/api/restaurants/search/**`
-- [ ] Create request rate limiting filter:
-  - [ ] Apply to `/api/orders/**` (e.g., 10 requests per minute)
-- [ ] Add logging filter for request/response tracking
-- [ ] Test authentication and routing through gateway
+- [x] Create JWT authentication filter:
+  - [x] Extract token from Authorization header
+  - [x] Validate JWT signature and expiration
+  - [x] Add user information to request headers
+  - [x] Allow unauthenticated paths: `/api/auth/**`, `/api/restaurants/search/**`
+- [x] Create request rate limiting filter:
+  - [x] Apply to `/api/orders/**` (e.g., 10 requests per minute)
+- [x] Add logging filter for request/response tracking
+- [x] Test authentication and routing through gateway
 
 ### 4.5 Update Services for Gateway
 - [ ] Remove JWT validation from individual services (trust gateway)
