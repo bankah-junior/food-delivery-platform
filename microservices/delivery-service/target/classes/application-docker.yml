@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: delivery-service
+  rabbitmq:
+    host: rabbitmq
+    port: 5672
+    username: guest
+    password: guest
   datasource:
     url: jdbc:postgresql://postgres:5432/delivery_db
     username: ${DB_USER:postgres}
@@ -22,3 +27,8 @@ management:
     web:
       exposure:
         include: health,info
+
+app:
+  rabbit:
+    listeners:
+      enabled: true

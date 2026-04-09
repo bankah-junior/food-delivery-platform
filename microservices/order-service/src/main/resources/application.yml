@@ -38,6 +38,10 @@ management:
     web:
       exposure:
         include: health,info
+app:
+  rabbit:
+    listeners:
+      enabled: ${RABBITMQ_LISTENER_ENABLED:false}
 
 eureka:
   client:

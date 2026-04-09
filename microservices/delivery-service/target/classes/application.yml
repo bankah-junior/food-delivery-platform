@@ -21,6 +21,13 @@ spring:
       hibernate:
         format_sql: true
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  flyway:
+    enabled: true
+
+app:
+  rabbit:
+    listeners:
+      enabled: ${RABBITMQ_LISTENER_ENABLED:false}
 
   flyway:
     enabled: true
