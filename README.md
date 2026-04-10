@@ -1,279 +1,179 @@
-# Food Delivery Platform - Project Understanding
+# Food Delivery Platform
 
-## Project Overview
+This repository contains a migration project from a monolithic Spring Boot application to a production-style microservices architecture for a food delivery platform.
 
-This project involves refactoring a **monolithic Spring Boot application** into a **microservices architecture** for a food delivery platform. The transformation includes service decomposition, containerization, service discovery, API gateway implementation, and event-driven communication.
+## Repository Structure
 
-**Complexity:** Advanced  
-**Tech Stack:** Spring Boot 3.x, Java 21, Docker, PostgreSQL, RabbitMQ, Eureka, Spring Cloud Gateway
+- `monolithic/`: Starter monolith used as migration baseline.
+- `microservices/`: Target architecture with independent services.
+- `docker-compose.yml`: Full local orchestration for all services and infrastructure.
+- `microservices/docs/`: Testing artifacts, architecture diagrams, API documentation, and migration decisions.
 
----
+## Microservices Overview
 
-## Current State: Monolith Architecture
+Core services:
+- Customer Service (`:8081`)
+- Restaurant Service (`:8082`)
+- Order Service (`:8083`)
+- Delivery Service (`:8084`)
 
-### Characteristics
-- **Single Application:** All functionality in one Spring Boot app running on port 8080
-- **Single Database:** H2 in-memory database (to be replaced with PostgreSQL in microservices)
-- **Tight Coupling:** Direct method calls between services (e.g., `OrderService` → `RestaurantRepository`)
-- **Synchronous Processing:** Delivery creation blocks order placement response
-- **Shared Entities:** JPA entities with `@ManyToOne` and `@OneToOne` relationships across domains
-- **Monolithic Deployment:** Single JAR deployment - scaling requires scaling everything
+Platform services:
+- API Gateway (`:8080`)
+- Eureka Server (`:8761`)
+- RabbitMQ (`:5672`, management UI `:15672`)
+- PostgreSQL (`:5432`)
 
-### Domains in the Monolith
-1. **Customer Management:** User registration, authentication, profile management
-2. **Restaurant & Menu Management:** Restaurant listings, menu items, cuisine types
-3. **Order Management:** Order placement, status tracking, order history
-4. **Delivery Management:** Delivery assignment, status updates, tracking
+## Prerequisites
 
-### Key Coupling Points to Break
-1. `OrderService` directly injects `CustomerService`, `RestaurantService`, and `DeliveryService`
-2. `RestaurantService` accesses `CustomerRepository` for ownership validation
-3. `DeliveryService.createDeliveryForOrder()` called synchronously during order placement
-4. `DeliveryService.updateStatus()` directly modifies `Order` entity status
-5. Entity relationships (`@ManyToOne`, `@OneToOne`) cross domain boundaries
-6. DTO mapping traverses entities across domains
+- Java 21+
+- Maven 3.9+
+- Docker Desktop (or Docker Engine)
+- Docker Compose V2
+- Optional for API test runbook: Node.js 18+ and Newman
 
----
+## Setup and Build
 
-## Target State: Microservices Architecture
+1. Clone repository
 
-### Architecture Components
-
-```
-Client → API Gateway (:8080)
-              │
-              ├── /api/customers/**   → Customer Service   (:8081) → customer_db
-              ├── /api/restaurants/** → Restaurant Service (:8082) → restaurant_db
-              ├── /api/orders/**      → Order Service      (:8083) → order_db
-              └── /api/deliveries/**  → Delivery Service   (:8084) → delivery_db
-
-Eureka Server (:8761) — Service Registry
-RabbitMQ (:5672)      — Event Bus
+```bash
+git clone <your-repository-url>
+cd food-delivery-platform
 ```
 
-### Four Independent Microservices
+2. Build all microservices
 
-#### 1. Customer Service (:8081)
-- **Responsibilities:** User registration, authentication, profile management
-- **Database:** `customer_db`
-- **Entities:** Customer
-- **API:** `/api/customers/**`, `/api/auth/**`
+```bash
+mvn -f microservices/eureka-server/pom.xml clean package -DskipTests
+mvn -f microservices/customer-service/pom.xml clean package -DskipTests
+mvn -f microservices/restaurant-service/pom.xml clean package -DskipTests
+mvn -f microservices/order-service/pom.xml clean package -DskipTests
+mvn -f microservices/delivery-service/pom.xml clean package -DskipTests
+mvn -f microservices/api-gateway/pom.xml clean package -DskipTests
+```
 
-#### 2. Restaurant Service (:8082)
-- **Responsibilities:** Restaurant management, menu management, cuisine search
-- **Database:** `restaurant_db`
-- **Entities:** Restaurant, MenuItem
-- **API:** `/api/restaurants/**`
+3. Start the full stack
 
-#### 3. Order Service (:8083)
-- **Responsibilities:** Order placement, order tracking, order history
-- **Database:** `order_db`
-- **Entities:** Order, OrderItem
-- **API:** `/api/orders/**`
-- **Inter-service Calls:** 
-  - Customer Service (validate customer, get delivery address)
-  - Restaurant Service (validate menu items, check prices)
+```bash
+docker compose up -d
+```
 
-#### 4. Delivery Service (:8084)
-- **Responsibilities:** Delivery assignment, status tracking, delivery completion
-- **Database:** `delivery_db`
-- **Entities:** Delivery
-- **API:** `/api/deliveries/**`
-- **Event-Driven:** Creates deliveries when `OrderPlacedEvent` is received
+4. Verify containers
 
-### Infrastructure Services
+```bash
+docker compose ps
+```
 
-#### Eureka Server (:8761)
-- Service registry for dynamic service discovery
-- All microservices register on startup
-- Services use logical names instead of hardcoded IPs
+5. Stop the stack
 
-#### API Gateway (:8080)
-- Single entry point for all client requests
-- Request routing based on path patterns
-- JWT authentication filter at gateway level
-- Rate limiting on high-traffic endpoints
-- Load balancing via Eureka integration
+```bash
+docker compose down
+```
 
-#### RabbitMQ (:5672)
-- Message broker for asynchronous communication
-- Event types:
-  - `OrderPlacedEvent` (Order → Delivery)
-  - `OrderCancelledEvent` (Order → Delivery)
-  - `DeliveryStatusUpdatedEvent` (Delivery → Order/Notification)
-- Dead letter queue for failed message processing
+To also remove persistent volumes:
 
----
+```bash
+docker compose down -v
+```
 
-## Key Transformations Required
+## Service Access and Dashboards
 
-### 1. Database Separation
-**From:** Single shared database with foreign key relationships  
-**To:** Four independent databases with ID references only
+- API Gateway base URL: `http://localhost:8080`
+- Eureka dashboard: `http://localhost:8761`
+- RabbitMQ management console: `http://localhost:15672` (default user/password: `guest` / `guest`)
 
-- Remove JPA entity relationships across services
-- Replace with REST API calls to fetch related data
-- Each service owns its data completely
+## API Gateway Routes
 
-### 2. Communication Patterns
+All client calls should go through the gateway (`http://localhost:8080`):
 
-#### Synchronous (OpenFeign)
-- Used for request-response scenarios requiring immediate data
-- Example: Order Service validates menu items with Restaurant Service
-- Circuit breakers for fault tolerance
+- `/api/auth/**` -> Customer Service
+- `/api/customers/**` -> Customer Service
+- `/api/restaurants/**` -> Restaurant Service
+- `/api/orders/**` -> Order Service
+- `/api/deliveries/**` -> Delivery Service
 
-#### Asynchronous (RabbitMQ)
-- Used for fire-and-forget, eventual consistency scenarios
-- Example: Order placed → Delivery created asynchronously
-- Improves performance and decouples services
+## End-to-End API Runbook
 
-### 3. Service Discovery
-**From:** Hardcoded URLs  
-**To:** Dynamic discovery via Eureka
+Postman artifacts:
+- Collection: `microservices/docs/postman/food-delivery-microservices.postman_collection.json`
+- Environment: `microservices/docs/postman/food-delivery-local.postman_environment.json`
+- Newman report sample: `microservices/docs/postman/newman-epic7-2-report.json`
 
-- Services register with Eureka on startup
-- Feign clients use logical service names: `http://restaurant-service`
-- Automatic load balancing across multiple instances
+Optional Newman execution:
 
-### 4. Authentication & Authorization
-**From:** JWT validation in each controller  
-**To:** Centralized JWT validation at API Gateway
+```bash
+npm install -g newman
+newman run microservices/docs/postman/food-delivery-microservices.postman_collection.json \
+  -e microservices/docs/postman/food-delivery-local.postman_environment.json
+```
 
-- Gateway validates tokens once
-- Propagates user context to downstream services
-- Services trust authenticated requests from gateway
+## API Specifications and Contracts
 
-### 5. Fault Tolerance
-- **Circuit Breakers:** Resilience4j on all Feign clients
-- **Fallback Responses:** Graceful degradation when services are down
-- **Timeouts:** Prevent cascading failures
-- **Bulkheads:** Isolate thread pools per service call
+Service API docs index:
+- `microservices/docs/apis/README.md`
 
----
+OpenAPI specs:
+- `microservices/docs/apis/specs/customer-service-openapi.yaml`
+- `microservices/docs/apis/specs/restaurant-service-openapi.yaml`
+- `microservices/docs/apis/specs/order-service-openapi.yaml`
+- `microservices/docs/apis/specs/delivery-service-openapi.yaml`
 
-## Technical Implementation Details
+You can import any spec into Swagger Editor (`https://editor.swagger.io`) for interactive inspection.
 
-### Docker Containerization
-- Multi-stage Dockerfiles (build + runtime stages)
-- Separate containers for each service and database
-- Docker Compose orchestration for entire system
-- Health checks and proper startup ordering
-- Environment-based configuration with `application-docker.yml`
+## Architecture Diagrams
 
-### Spring Cloud Stack
-- **Spring Cloud Netflix Eureka:** Service discovery
-- **Spring Cloud Gateway:** API gateway with filters and predicates
-- **Spring Cloud OpenFeign:** Declarative REST clients
-- **Spring Boot Actuator:** Health checks and metrics
-- **Resilience4j:** Circuit breakers, retry, rate limiting
+Diagram index:
+- `microservices/docs/diagrams/README.md`
 
-### Database Per Service
-- PostgreSQL for each microservice
-- Schema migration via Flyway or Liquibase
-- No shared databases or cross-service queries
-- Data duplication acceptable for bounded contexts
+Mermaid sources:
+- `microservices/docs/diagrams/monolith-architecture.mmd`
+- `microservices/docs/diagrams/microservices-architecture.mmd`
+- `microservices/docs/diagrams/sequence-order-placement.mmd`
+- `microservices/docs/diagrams/sequence-event-driven-delivery.mmd`
 
----
+Exported images (PNG/SVG):
+- `microservices/docs/diagrams/exports/`
 
-## Migration Strategy
+## Troubleshooting
 
-### Phase 1: Service Decomposition
-1. Create four separate Spring Boot projects
-2. Extract entities and repositories per domain
-3. Break entity relationships, use IDs only
-4. Implement REST APIs for each service
-5. Test each service independently
+1. `docker compose up -d` fails
+- Ensure Docker is running.
+- Check for port collisions on `8080-8084`, `8761`, `5432`, `5672`, and `15672`.
+- Review logs: `docker compose logs -f <service-name>`.
 
-### Phase 2: Inter-service Communication
-1. Implement OpenFeign clients for synchronous calls
-2. Add circuit breakers with Resilience4j
-3. Define fallback strategies
-4. Handle partial failures gracefully
+2. Gateway returns 503 for service routes
+- Confirm Eureka is up (`http://localhost:8761`).
+- Confirm target service is healthy in `docker compose ps`.
 
-### Phase 3: Event-Driven Architecture
-1. Set up RabbitMQ with exchanges and queues
-2. Implement event publishers in Order Service
-3. Implement event consumers in Delivery Service
-4. Add dead letter queue handling
-5. Test async message flows
+3. Auth-protected endpoints fail with 401/403
+- Authenticate first via `/api/auth/login` through gateway.
+- Ensure `Authorization: Bearer <token>` is included in requests.
 
-### Phase 4: Infrastructure Setup
-1. Create Eureka Server
-2. Register all services with Eureka
-3. Build API Gateway with routing rules
-4. Add JWT authentication filter at gateway
-5. Configure rate limiting
+4. RabbitMQ UI not reachable
+- Validate container health: `docker compose ps rabbitmq`.
+- Confirm management port `15672` is not used by another process.
 
-### Phase 5: Containerization
-1. Write Dockerfiles for each service
-2. Create docker-compose.yml
-3. Configure Docker-specific profiles
-4. Set up health checks
-5. Test complete system startup
+5. Stale database state causes duplicate-data errors in tests
+- Reset environment when needed:
 
-### Phase 6: Testing & Documentation
-1. Create Postman collection for all endpoints
-2. Test end-to-end user flows
-3. Test fault tolerance scenarios
-4. Draw architecture diagrams
-5. Document API contracts and migration decisions
+```bash
+docker compose down -v
+docker compose up -d
+```
 
----
+## Additional Project Documentation
 
-## Success Criteria
+- Migration decision log: `microservices/docs/migration-decision-log.md`
+- Fault tolerance evidence: `microservices/docs/postman/epic-7-3-fault-tolerance-results.md`
+- Engineering tracker: `microservices/docs/progress-tracker.md`
+- Epic task checklist: `microservices/docs/todo.md`
 
-### Functional Requirements
-✓ All original monolith features work in microservices version  
-✓ Order placement flow: customer → restaurant → order → delivery  
-✓ Event-driven delivery creation happens asynchronously  
-✓ JWT authentication works through gateway  
+## Contribution Guidelines
 
-### Non-Functional Requirements
-✓ Each service can be deployed independently  
-✓ Services can scale independently  
-✓ System remains functional when one service is down  
-✓ Circuit breakers prevent cascading failures  
-✓ Complete system starts with `docker compose up`  
+1. Create a feature branch from `main`.
+2. Keep changes scoped to one concern (service feature, docs, or infra).
+3. Run service build(s) and relevant tests before opening a PR.
+4. Update docs in `microservices/docs/` when behavior or API contracts change.
+5. Use clear commit messages and include verification notes in PR descriptions.
 
-### Documentation Requirements
-✓ Architecture diagram showing all services and data flows  
-✓ API contracts for each microservice  
-✓ Migration decision log explaining decomposition choices  
-✓ README with setup and testing instructions  
+## License
 
----
-
-## Key Challenges & Solutions
-
-### Challenge 1: Data Consistency
-**Problem:** No distributed transactions across services  
-**Solution:** Event-driven eventual consistency, compensating transactions for failures
-
-### Challenge 2: Joined Queries
-**Problem:** Can't JOIN across service databases  
-**Solution:** API composition pattern - make multiple REST calls and aggregate in memory
-
-### Challenge 3: Service Availability
-**Problem:** Dependent service might be down  
-**Solution:** Circuit breakers with fallback responses, graceful degradation
-
-### Challenge 4: Data Duplication
-**Problem:** Need customer name in order history  
-**Solution:** Cache necessary data in Order Service, use events to keep it updated
-
-### Challenge 5: Testing Complexity
-**Problem:** Need entire system running to test one feature  
-**Solution:** Contract testing, service mocking, Docker Compose for integration tests
-
----
-
-## Benefits of Microservices Architecture
-
-1. **Independent Deployment:** Deploy Restaurant Service without touching Order Service
-2. **Technology Flexibility:** Each service can use different frameworks/databases
-3. **Team Autonomy:** Teams can work on different services independently
-4. **Scalability:** Scale only the bottleneck service (e.g., Order Service during peak hours)
-5. **Fault Isolation:** Bug in Delivery Service won't crash order placement
-6. **Better Organization:** Clear boundaries make codebase easier to understand
-
----
