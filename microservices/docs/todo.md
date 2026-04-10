@@ -418,17 +418,17 @@
 - [x] Generate API documentation with Swagger UI
 
 ### 7.6 Create Migration Decision Log
-- [ ] Document service boundary decisions:
-  - [ ] Why Customer is separate from Order
-  - [ ] Why Restaurant includes Menu
-  - [ ] Why Delivery is separate from Order
-- [ ] Document communication pattern choices:
-  - [ ] When to use sync vs async
-  - [ ] Why OpenFeign for REST calls
-  - [ ] Why RabbitMQ for events
-- [ ] Document database separation strategy
-- [ ] Document security approach (gateway-level JWT)
-- [ ] List trade-offs and alternatives considered
+- [x] Document service boundary decisions:
+  - [x] Why Customer is separate from Order
+  - [x] Why Restaurant includes Menu
+  - [x] Why Delivery is separate from Order
+- [x] Document communication pattern choices:
+  - [x] When to use sync vs async
+  - [x] Why OpenFeign for REST calls
+  - [x] Why RabbitMQ for events
+- [x] Document database separation strategy
+- [x] Document security approach (gateway-level JWT)
+- [x] List trade-offs and alternatives considered
 
 ### 7.7 Update README
 - [ ] Add comprehensive project description
