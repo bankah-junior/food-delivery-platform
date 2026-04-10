@@ -1,0 +1,151 @@
+openapi: 3.0.3
+info:
+  title: Delivery Service API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8084
+  - url: http://localhost:8080
+paths:
+  /api/deliveries/{id}:
+    get:
+      summary: Get delivery by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryResponse'
+  /api/deliveries/order/{orderId}:
+    get:
+      summary: Get delivery by order id
+      parameters:
+        - name: orderId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryResponse'
+  /api/deliveries/status/{status}:
+    get:
+      summary: Get deliveries by status
+      parameters:
+        - name: status
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [PENDING, ASSIGNED, PICKED_UP, IN_TRANSIT, DELIVERED, FAILED]
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DeliveryResponse'
+  /api/deliveries/{id}/status:
+    patch:
+      summary: Update delivery status
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeliveryStatusUpdateRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryResponse'
+  /api/deliveries:
+    post:
+      summary: Create delivery for order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDeliveryRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeliveryResponse'
+components:
+  schemas:
+    CreateDeliveryRequest:
+      type: object
+      required: [orderId, pickupAddress, deliveryAddress]
+      properties:
+        orderId:
+          type: integer
+          format: int64
+        pickupAddress:
+          type: string
+        deliveryAddress:
+          type: string
+    DeliveryStatusUpdateRequest:
+      type: object
+      required: [status]
+      properties:
+        status:
+          type: string
+          enum: [PENDING, ASSIGNED, PICKED_UP, IN_TRANSIT, DELIVERED, FAILED]
+    DeliveryResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        status:
+          type: string
+        orderId:
+          type: integer
+          format: int64
+        driverName:
+          type: string
+        driverPhone:
+          type: string
+        pickupAddress:
+          type: string
+        deliveryAddress:
+          type: string
+        assignedAt:
+          type: string
+          format: date-time
+        pickedUpAt:
+          type: string
+          format: date-time
+        deliveredAt:
+          type: string
+          format: date-time
+        createdAt:
+          type: string
+          format: date-time

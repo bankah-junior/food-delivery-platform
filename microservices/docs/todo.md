@@ -408,14 +408,14 @@
 - [x] Export diagrams as PNG/SVG
 
 ### 7.5 Write API Documentation
-- [ ] Document Customer Service API contract:
-  - [ ] List all endpoints with request/response examples
-  - [ ] Document authentication requirements
-- [ ] Document Restaurant Service API contract
-- [ ] Document Order Service API contract
-- [ ] Document Delivery Service API contract
-- [ ] Create OpenAPI/Swagger specs for each service
-- [ ] Generate API documentation with Swagger UI
+- [x] Document Customer Service API contract:
+  - [x] List all endpoints with request/response examples
+  - [x] Document authentication requirements
+- [x] Document Restaurant Service API contract
+- [x] Document Order Service API contract
+- [x] Document Delivery Service API contract
+- [x] Create OpenAPI/Swagger specs for each service
+- [x] Generate API documentation with Swagger UI
 
 ### 7.6 Create Migration Decision Log
 - [ ] Document service boundary decisions:
