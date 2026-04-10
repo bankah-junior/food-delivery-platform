@@ -25,6 +25,7 @@
     { "key": "auth_username", "value": "postman_customer" },
     { "key": "auth_email", "value": "postman_customer@example.com" },
     { "key": "auth_password", "value": "Password123!" },
+    { "key": "auth_phone", "value": "+233000000000" },
     { "key": "customer_id", "value": "1" },
     { "key": "restaurant_id", "value": "1" },
     { "key": "menu_item_id", "value": "1" },
@@ -34,6 +35,7 @@
     { "key": "cuisine", "value": "International" },
     { "key": "order_status", "value": "CONFIRMED" },
     { "key": "delivery_status", "value": "IN_TRANSIT" }
+    ,{ "key": "update_phone", "value": "+233111111111" }
   ],
   "item": [
     {
@@ -50,13 +52,16 @@
                   "const suffix = Date.now();",
                   "const username = `postman_customer_${suffix}`;",
                   "const email = `${username}@example.com`;",
+                  "const phone = `+233${String(suffix).slice(-9)}`;",
                   "const password = 'Password123!';",
                   "pm.collectionVariables.set('auth_username', username);",
                   "pm.collectionVariables.set('auth_email', email);",
                   "pm.collectionVariables.set('auth_password', password);",
+                  "pm.collectionVariables.set('auth_phone', phone);",
                   "pm.environment.set('auth_username', username);",
                   "pm.environment.set('auth_email', email);",
-                  "pm.environment.set('auth_password', password);"
+                  "pm.environment.set('auth_password', password);",
+                  "pm.environment.set('auth_phone', phone);"
                 ]
               }
             },
@@ -68,13 +73,13 @@
                   "pm.test('Status code is 201', function () {",
                   "  pm.response.to.have.status(201);",
                   "});",
-                  "const data = pm.response.json();",
+                  "var responseData = pm.response.json();",
                   "pm.test('Register response has token', function () {",
-                  "  pm.expect(data.token).to.be.a('string').and.not.empty;",
+                  "  pm.expect(responseData.token).to.be.a('string').and.not.empty;",
                   "});",
-                  "if (data.customerId) {",
-                  "  pm.environment.set('customer_id', String(data.customerId));",
-                  "  pm.collectionVariables.set('customer_id', String(data.customerId));",
+                  "if (responseData.customerId) {",
+                  "  pm.environment.set('customer_id', String(responseData.customerId));",
+                  "  pm.collectionVariables.set('customer_id', String(responseData.customerId));",
                   "}"
                 ]
               }
@@ -87,7 +92,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"username\": \"{{auth_username}}\",\n  \"email\": \"{{auth_email}}\",\n  \"password\": \"{{auth_password}}\",\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Customer\",\n  \"phone\": \"+233000000000\",\n  \"deliveryAddress\": \"10 Test Street\",\n  \"city\": \"{{city}}\"\n}"
+              "raw": "{\n  \"username\": \"{{auth_username}}\",\n  \"email\": \"{{auth_email}}\",\n  \"password\": \"{{auth_password}}\",\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Customer\",\n  \"phone\": \"{{auth_phone}}\",\n  \"deliveryAddress\": \"10 Test Street\",\n  \"city\": \"{{city}}\"\n}"
             },
             "url": "{{base_url}}/api/auth/register"
           }
@@ -114,15 +119,15 @@
                   "pm.test('Status code is 200', function () {",
                   "  pm.response.to.have.status(200);",
                   "});",
-                  "const data = pm.response.json();",
+                  "var responseData = pm.response.json();",
                   "pm.test('Login response has token', function () {",
-                  "  pm.expect(data.token).to.be.a('string').and.not.empty;",
+                  "  pm.expect(responseData.token).to.be.a('string').and.not.empty;",
                   "});",
-                  "pm.environment.set('token', data.token);",
-                  "pm.collectionVariables.set('token', data.token);",
-                  "if (data.customerId) {",
-                  "  pm.environment.set('customer_id', String(data.customerId));",
-                  "  pm.collectionVariables.set('customer_id', String(data.customerId));",
+                  "pm.environment.set('token', responseData.token);",
+                  "pm.collectionVariables.set('token', responseData.token);",
+                  "if (responseData.customerId) {",
+                  "  pm.environment.set('customer_id', String(responseData.customerId));",
+                  "  pm.collectionVariables.set('customer_id', String(responseData.customerId));",
                   "}"
                 ]
               }
@@ -147,8 +152,8 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
-                  "const data = pm.response.json();",
-                  "pm.test('Profile has username', function () { pm.expect(data.username).to.be.a('string'); });"
+                  "var responseData = pm.response.json();",
+                  "pm.test('Profile has username', function () { pm.expect(responseData.username).to.be.a('string'); });"
                 ]
               }
             }
@@ -167,9 +172,9 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
-                  "const data = pm.response.json();",
+                  "var responseData = pm.response.json();",
                   "pm.test('Returned customer id matches variable', function () {",
-                  "  pm.expect(String(data.id)).to.eql(pm.variables.get('customer_id'));",
+                  "  pm.expect(String(responseData.id)).to.eql(pm.variables.get('customer_id'));",
                   "});"
                 ]
               }
@@ -178,6 +183,30 @@
         },
         {
           "name": "PUT Update profile",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const updatePhone = `+233${String(Date.now()).slice(-9)}`;",
+                  "pm.collectionVariables.set('update_phone', updatePhone);",
+                  "pm.environment.set('update_phone', updatePhone);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "var responseData = pm.response.json();",
+                  "pm.test('Profile city updated', function () { pm.expect(responseData.city).to.eql(pm.variables.get('city')); });"
+                ]
+              }
+            }
+          ],
           "request": {
             "method": "PUT",
             "header": [
@@ -185,23 +214,10 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Updated\",\n  \"phone\": \"+233111111111\",\n  \"deliveryAddress\": \"15 Updated Avenue\",\n  \"city\": \"{{city}}\"\n}"
+              "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Updated\",\n  \"phone\": \"{{update_phone}}\",\n  \"deliveryAddress\": \"15 Updated Avenue\",\n  \"city\": \"{{city}}\"\n}"
             },
             "url": "{{base_url}}/api/customers/me"
-          },
-          "event": [
-            {
-              "listen": "test",
-              "script": {
-                "type": "text/javascript",
-                "exec": [
-                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
-                  "const data = pm.response.json();",
-                  "pm.test('Profile city updated', function () { pm.expect(data.city).to.eql(pm.variables.get('city')); });"
-                ]
-              }
-            }
-          ]
+          }
         }
       ]
     },
@@ -239,10 +255,7 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "const code = pm.response.code;",
-                  "pm.test('Status code is 200 (or 404 before delivery id is resolved)', function () {",
-                  "  pm.expect([200, 404]).to.include(code);",
-                  "});"
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
                 ]
               }
             }
@@ -323,10 +336,10 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
-                  "const data = pm.response.json();",
-                  "pm.test('Restaurant id is returned', function () { pm.expect(data.id).to.exist; });",
-                  "pm.environment.set('restaurant_id', String(data.id));",
-                  "pm.collectionVariables.set('restaurant_id', String(data.id));"
+                  "var responseData = pm.response.json();",
+                  "pm.test('Restaurant id is returned', function () { pm.expect(responseData.id).to.exist; });",
+                  "pm.environment.set('restaurant_id', String(responseData.id));",
+                  "pm.collectionVariables.set('restaurant_id', String(responseData.id));"
                 ]
               }
             }
@@ -352,10 +365,10 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
-                  "const data = pm.response.json();",
-                  "pm.test('Menu item id is returned', function () { pm.expect(data.id).to.exist; });",
-                  "pm.environment.set('menu_item_id', String(data.id));",
-                  "pm.collectionVariables.set('menu_item_id', String(data.id));"
+                  "var responseData = pm.response.json();",
+                  "pm.test('Menu item id is returned', function () { pm.expect(responseData.id).to.exist; });",
+                  "pm.environment.set('menu_item_id', String(responseData.id));",
+                  "pm.collectionVariables.set('menu_item_id', String(responseData.id));"
                 ]
               }
             }
@@ -442,10 +455,10 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
-                  "const data = pm.response.json();",
-                  "pm.test('Order id is returned', function () { pm.expect(data.id).to.exist; });",
-                  "pm.environment.set('order_id', String(data.id));",
-                  "pm.collectionVariables.set('order_id', String(data.id));"
+                  "var responseData = pm.response.json();",
+                  "pm.test('Order id is returned', function () { pm.expect(responseData.id).to.exist; });",
+                  "pm.environment.set('order_id', String(responseData.id));",
+                  "pm.collectionVariables.set('order_id', String(responseData.id));"
                 ]
               }
             }
@@ -526,8 +539,8 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
-                  "const data = pm.response.json();",
-                  "pm.test('Order status updated', function () { pm.expect(data.status).to.eql(pm.variables.get('order_status')); });"
+                  "var responseData = pm.response.json();",
+                  "pm.test('Order status updated', function () { pm.expect(responseData.status).to.eql(pm.variables.get('order_status')); });"
                 ]
               }
             }
@@ -568,7 +581,10 @@
               "script": {
                 "type": "text/javascript",
                 "exec": [
-                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                  "const code = pm.response.code;",
+                  "pm.test('Status code is 200 (or 404 before delivery id is resolved)', function () {",
+                  "  pm.expect([200, 404]).to.include(code);",
+                  "});"
                 ]
               }
             }
@@ -587,8 +603,8 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
-                  "const data = pm.response.json();",
-                  "if (data.id) { pm.environment.set('delivery_id', String(data.id)); pm.collectionVariables.set('delivery_id', String(data.id)); }"
+                  "var responseData = pm.response.json();",
+                  "if (responseData.id) { pm.environment.set('delivery_id', String(responseData.id)); pm.collectionVariables.set('delivery_id', String(responseData.id)); }"
                 ]
               }
             }
@@ -633,8 +649,8 @@
                 "type": "text/javascript",
                 "exec": [
                   "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
-                  "const data = pm.response.json();",
-                  "pm.test('Delivery status updated', function () { pm.expect(data.status).to.eql(pm.variables.get('delivery_status')); });"
+                  "var responseData = pm.response.json();",
+                  "pm.test('Delivery status updated', function () { pm.expect(responseData.status).to.eql(pm.variables.get('delivery_status')); });"
                 ]
               }
             }

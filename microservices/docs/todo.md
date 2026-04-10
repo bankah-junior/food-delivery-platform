@@ -373,22 +373,22 @@
 - [x] Add tests for status codes and response validation
 
 ### 7.2 End-to-End Testing
-- [ ] Test complete order flow:
-  - [ ] Register new customer
-  - [ ] Login and get token
-  - [ ] Create restaurant
-  - [ ] Add menu items
-  - [ ] Browse restaurants
-  - [ ] Place order
-  - [ ] Verify delivery created automatically (async)
-  - [ ] Update delivery status
-  - [ ] Verify order status updated
-  - [ ] Check order history
-- [ ] Test edge cases:
-  - [ ] Order from non-existent restaurant
-  - [ ] Order unavailable menu items
-  - [ ] Cancel already delivered order
-  - [ ] Invalid JWT token
+- [x] Test complete order flow:
+  - [x] Register new customer
+  - [x] Login and get token
+  - [x] Create restaurant
+  - [x] Add menu items
+  - [x] Browse restaurants
+  - [x] Place order
+  - [x] Verify delivery created automatically (async)
+  - [x] Update delivery status
+  - [x] Verify order status updated
+  - [x] Check order history
+- [x] Test edge cases:
+  - [x] Order from non-existent restaurant
+  - [x] Order unavailable menu items
+  - [x] Cancel already delivered order
+  - [x] Invalid JWT token
 
 ### 7.3 Fault Tolerance Testing
 - [ ] Stop Customer Service and test order placement:

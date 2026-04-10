@@ -19,9 +19,9 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic 4: Service Discovery & Gateway | 🟢 Complete | 100% | 22 | 22 |
 | Epic 5: Fault Tolerance | 🟢 Complete | 100% | 18 | 18 |
 | Epic 6: Containerization | 🟢 Complete | 100% | 16 | 16 |
-| Epic 7: Testing & Documentation | 🟡 In Progress | 19% | 5 | 27 |
+| Epic 7: Testing & Documentation | 🟡 In Progress | 33% | 9 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **81%** | **133** | **165** |
+| **TOTAL** | 🟡 In Progress | **83%** | **137** | **165** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -220,7 +220,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 7: Testing and Documentation (5/27)
+### Epic 7: Testing and Documentation (9/27)
 
 #### 7.1 Create Postman Collection (5/5)
 - [x] Authentication folder
@@ -229,9 +229,9 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 - [x] Orders folder
 - [x] Deliveries folder
 
-#### 7.2 End-to-End Testing (0/4)
-- [ ] Complete order flow
-- [ ] Edge cases
+#### 7.2 End-to-End Testing (4/4)
+- [x] Complete order flow
+- [x] Edge cases
 
 #### 7.3 Fault Tolerance Testing (0/5)
 - [ ] Service outage tests
