@@ -400,12 +400,12 @@
 - [x] Restart services and verify auto-recovery
 
 ### 7.4 Create Architecture Diagrams
-- [ ] Draw current monolith architecture diagram
-- [ ] Draw target microservices architecture diagram
-- [ ] Create sequence diagram for order placement flow
-- [ ] Create sequence diagram for event-driven delivery creation
-- [ ] Document service dependencies and communication patterns
-- [ ] Export diagrams as PNG/SVG
+- [x] Draw current monolith architecture diagram
+- [x] Draw target microservices architecture diagram
+- [x] Create sequence diagram for order placement flow
+- [x] Create sequence diagram for event-driven delivery creation
+- [x] Document service dependencies and communication patterns
+- [x] Export diagrams as PNG/SVG
 
 ### 7.5 Write API Documentation
 - [ ] Document Customer Service API contract:

@@ -1,0 +1,52 @@
+flowchart LR
+    Client[Web or Mobile Client]
+
+    subgraph Infra[Infrastructure]
+      GW[API Gateway :8080]
+      EU[Eureka Server :8761]
+      MQ[RabbitMQ :5672]
+    end
+
+    subgraph Services[Microservices]
+      CS[Customer Service :8081]
+      RS[Restaurant Service :8082]
+      OS[Order Service :8083]
+      DS[Delivery Service :8084]
+    end
+
+    CDB[(customer_db)]
+    RDB[(restaurant_db)]
+    ODB[(order_db)]
+    DDB[(delivery_db)]
+
+    Client --> GW
+    GW --> CS
+    GW --> RS
+    GW --> OS
+    GW --> DS
+
+    CS -.registers.-> EU
+    RS -.registers.-> EU
+    OS -.registers.-> EU
+    DS -.registers.-> EU
+    GW -.discovers.-> EU
+
+    OS --> CS
+    OS --> RS
+
+    OS -- OrderPlacedEvent --> MQ
+    MQ -- consume --> DS
+    DS -- DeliveryStatusUpdatedEvent --> MQ
+    MQ -- consume --> OS
+
+    CS --> CDB
+    RS --> RDB
+    OS --> ODB
+    DS --> DDB
+
+    classDef infra fill:#fef3c7,stroke:#b45309,stroke-width:1px,color:#431407;
+    classDef svc fill:#e0f2fe,stroke:#075985,stroke-width:1px,color:#082f49;
+    classDef db fill:#ecfccb,stroke:#3f6212,stroke-width:1px,color:#1a2e05;
+    class GW,EU,MQ infra;
+    class CS,RS,OS,DS svc;
+    class CDB,RDB,ODB,DDB db;

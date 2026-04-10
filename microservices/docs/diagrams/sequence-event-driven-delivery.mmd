@@ -1,0 +1,19 @@
+sequenceDiagram
+    autonumber
+    participant O as Order Service
+    participant MQ as RabbitMQ
+    participant D as Delivery Service
+    participant ODB as order_db
+    participant DDB as delivery_db
+
+    O->>ODB: Save order (status: PLACED)
+    O->>MQ: Publish OrderPlacedEvent
+
+    MQ-->>D: Consume OrderPlacedEvent
+    D->>DDB: Create delivery (status: ASSIGNED)
+    D->>MQ: Publish DeliveryStatusUpdatedEvent
+
+    MQ-->>O: Consume DeliveryStatusUpdatedEvent
+    O->>ODB: Update order status (OUT_FOR_DELIVERY)
+
+    Note over O,MQ: If consumer unavailable, message stays queued until recovery

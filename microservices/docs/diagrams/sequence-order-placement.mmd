@@ -1,0 +1,29 @@
+sequenceDiagram
+    autonumber
+    participant U as User Client
+    participant G as API Gateway
+    participant O as Order Service
+    participant C as Customer Service
+    participant R as Restaurant Service
+    participant MQ as RabbitMQ
+    participant D as Delivery Service
+
+    U->>G: POST /api/orders
+    G->>O: Forward request with user headers
+
+    O->>C: Validate customer and profile
+    C-->>O: Customer details
+
+    O->>R: Validate restaurant and menu items
+    R-->>O: Menu items and pricing
+
+    O->>O: Create order and persist
+    O-->>G: 201 Created (order response)
+    G-->>U: 201 Created
+
+    O->>MQ: Publish OrderPlacedEvent
+    MQ-->>D: Deliver OrderPlacedEvent
+    D->>D: Create delivery and assign status
+    D->>MQ: Publish DeliveryStatusUpdatedEvent
+    MQ-->>O: Deliver DeliveryStatusUpdatedEvent
+    O->>O: Update order delivery status
