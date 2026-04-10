@@ -20,8 +20,8 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic 5: Fault Tolerance | 🟢 Complete | 100% | 18 | 18 |
 | Epic 6: Containerization | 🟢 Complete | 100% | 16 | 16 |
 | Epic 7: Testing & Documentation | 🟢 Complete | 100% | 27 | 27 |
-| Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **94%** | **155** | **165** |
+| Epic 8: Performance & Monitoring | � In Progress | 40% | 4 | 10 |
+| **TOTAL** | 🟡 In Progress | **94%** | **159** | **165** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -254,11 +254,11 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 8: Performance and Monitoring (0/10)
+### Epic 8: Performance and Monitoring (4/10)
 
-#### 8.1 Add Monitoring with Actuator (0/4)
-- [ ] Enable Actuator
-- [ ] Configure endpoints
+#### 8.1 Add Monitoring with Actuator (4/4)
+- [x] Enable Actuator
+- [x] Configure endpoints
 
 #### 8.2 Add Distributed Tracing (0/3)
 - [ ] Add Sleuth

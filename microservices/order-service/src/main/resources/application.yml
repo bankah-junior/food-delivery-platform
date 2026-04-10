@@ -36,10 +36,17 @@ spring:
             loggerLevel: basic
 
 management:
+  endpoint:
+    health:
+      show-details: always
   endpoints:
     web:
       exposure:
-        include: health,info,circuitbreakers,metrics
+        include: health,info,metrics,prometheus,circuitbreakers,circuitbreakerevents
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
 
 resilience4j:
   circuitbreaker:

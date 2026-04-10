@@ -450,10 +450,10 @@
 ## Epic 8: Performance and Monitoring
 
 ### 8.1 Add Monitoring with Spring Boot Actuator
-- [ ] Enable Actuator endpoints in all services
-- [ ] Expose health, metrics, and info endpoints
-- [ ] Configure Actuator security (allow Prometheus scraping)
-- [ ] Add custom health indicators for database and RabbitMQ
+- [x] Enable Actuator endpoints in all services
+- [x] Expose health, metrics, and info endpoints
+- [x] Configure Actuator security (allow Prometheus scraping)
+- [x] Add custom health indicators for database and RabbitMQ
 
 ### 8.2 Add Distributed Tracing (Optional)
 - [ ] Add Spring Cloud Sleuth dependency

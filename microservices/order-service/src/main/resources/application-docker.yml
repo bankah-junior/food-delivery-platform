@@ -29,7 +29,11 @@ management:
   endpoints:
     web:
       exposure:
-        include: health,info,circuitbreakers,circuitbreakerevents
+        include: health,info,metrics,prometheus,circuitbreakers,circuitbreakerevents
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
 
 app:
   rabbit:
