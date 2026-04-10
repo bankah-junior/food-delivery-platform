@@ -5,7 +5,7 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 **Project Start Date:** _(To be filled)_  
 **Target Completion:** 14-18 hours  
-**Current Phase:** Epic 7 Not Started
+**Current Phase:** Epic 7 In Progress
 
 ---
 
@@ -19,9 +19,9 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 | Epic 4: Service Discovery & Gateway | 🟢 Complete | 100% | 22 | 22 |
 | Epic 5: Fault Tolerance | 🟢 Complete | 100% | 18 | 18 |
 | Epic 6: Containerization | 🟢 Complete | 100% | 16 | 16 |
-| Epic 7: Testing & Documentation | 🔴 Not Started | 0% | 0 | 27 |
+| Epic 7: Testing & Documentation | 🟡 In Progress | 19% | 5 | 27 |
 | Epic 8: Performance & Monitoring | 🔴 Not Started | 0% | 0 | 10 |
-| **TOTAL** | 🟡 In Progress | **78%** | **128** | **165** |
+| **TOTAL** | 🟡 In Progress | **81%** | **133** | **165** |
 
 **Legend:**
 - 🔴 Not Started (0%)
@@ -220,14 +220,14 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-### Epic 7: Testing and Documentation (0/27)
+### Epic 7: Testing and Documentation (5/27)
 
-#### 7.1 Create Postman Collection (0/5)
-- [ ] Authentication folder
-- [ ] Customers folder
-- [ ] Restaurants folder
-- [ ] Orders folder
-- [ ] Deliveries folder
+#### 7.1 Create Postman Collection (5/5)
+- [x] Authentication folder
+- [x] Customers folder
+- [x] Restaurants folder
+- [x] Orders folder
+- [x] Deliveries folder
 
 #### 7.2 End-to-End Testing (0/4)
 - [ ] Complete order flow
@@ -430,5 +430,5 @@ This document tracks the progress of refactoring the Food Delivery Platform from
 
 ---
 
-**Last Updated:** 2026-04-09  
+**Last Updated:** 2026-04-10  
 **Updated By:** GitHub Copilot

@@ -1,0 +1,646 @@
+{
+  "info": {
+    "_postman_id": "f2e7f677-5b68-4f7c-8fb3-9ab56aa5cb0d",
+    "name": "Food Delivery Platform - Microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "const rawUrl = pm.request.url.toString();",
+          "const token = pm.variables.get('token');",
+          "if (!rawUrl.includes('/api/auth/') && token) {",
+          "  pm.request.headers.upsert({ key: 'Authorization', value: `Bearer ${token}` });",
+          "}"
+        ]
+      }
+    }
+  ],
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8080" },
+    { "key": "token", "value": "" },
+    { "key": "auth_username", "value": "postman_customer" },
+    { "key": "auth_email", "value": "postman_customer@example.com" },
+    { "key": "auth_password", "value": "Password123!" },
+    { "key": "customer_id", "value": "1" },
+    { "key": "restaurant_id", "value": "1" },
+    { "key": "menu_item_id", "value": "1" },
+    { "key": "order_id", "value": "1" },
+    { "key": "delivery_id", "value": "1" },
+    { "key": "city", "value": "Accra" },
+    { "key": "cuisine", "value": "International" },
+    { "key": "order_status", "value": "CONFIRMED" },
+    { "key": "delivery_status", "value": "IN_TRANSIT" }
+  ],
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "POST Register customer",
+          "event": [
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const suffix = Date.now();",
+                  "const username = `postman_customer_${suffix}`;",
+                  "const email = `${username}@example.com`;",
+                  "const password = 'Password123!';",
+                  "pm.collectionVariables.set('auth_username', username);",
+                  "pm.collectionVariables.set('auth_email', email);",
+                  "pm.collectionVariables.set('auth_password', password);",
+                  "pm.environment.set('auth_username', username);",
+                  "pm.environment.set('auth_email', email);",
+                  "pm.environment.set('auth_password', password);"
+                ]
+              }
+            },
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 201', function () {",
+                  "  pm.response.to.have.status(201);",
+                  "});",
+                  "const data = pm.response.json();",
+                  "pm.test('Register response has token', function () {",
+                  "  pm.expect(data.token).to.be.a('string').and.not.empty;",
+                  "});",
+                  "if (data.customerId) {",
+                  "  pm.environment.set('customer_id', String(data.customerId));",
+                  "  pm.collectionVariables.set('customer_id', String(data.customerId));",
+                  "}"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{auth_username}}\",\n  \"email\": \"{{auth_email}}\",\n  \"password\": \"{{auth_password}}\",\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Customer\",\n  \"phone\": \"+233000000000\",\n  \"deliveryAddress\": \"10 Test Street\",\n  \"city\": \"{{city}}\"\n}"
+            },
+            "url": "{{base_url}}/api/auth/register"
+          }
+        },
+        {
+          "name": "POST Login (save token to environment)",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{auth_username}}\",\n  \"password\": \"{{auth_password}}\"\n}"
+            },
+            "url": "{{base_url}}/api/auth/login"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () {",
+                  "  pm.response.to.have.status(200);",
+                  "});",
+                  "const data = pm.response.json();",
+                  "pm.test('Login response has token', function () {",
+                  "  pm.expect(data.token).to.be.a('string').and.not.empty;",
+                  "});",
+                  "pm.environment.set('token', data.token);",
+                  "pm.collectionVariables.set('token', data.token);",
+                  "if (data.customerId) {",
+                  "  pm.environment.set('customer_id', String(data.customerId));",
+                  "  pm.collectionVariables.set('customer_id', String(data.customerId));",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "GET My profile",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/customers/me"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Profile has username', function () { pm.expect(data.username).to.be.a('string'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Customer by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/customers/{{customer_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Returned customer id matches variable', function () {",
+                  "  pm.expect(String(data.id)).to.eql(pm.variables.get('customer_id'));",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PUT Update profile",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Postman\",\n  \"lastName\": \"Updated\",\n  \"phone\": \"+233111111111\",\n  \"deliveryAddress\": \"15 Updated Avenue\",\n  \"city\": \"{{city}}\"\n}"
+            },
+            "url": "{{base_url}}/api/customers/me"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Profile city updated', function () { pm.expect(data.city).to.eql(pm.variables.get('city')); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Restaurants",
+      "item": [
+        {
+          "name": "GET All restaurants",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/restaurants/search/all"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is an array', function () { pm.expect(pm.response.json()).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Search by city",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/restaurants/search/city/{{city}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "const code = pm.response.code;",
+                  "pm.test('Status code is 200 (or 404 before delivery id is resolved)', function () {",
+                  "  pm.expect([200, 404]).to.include(code);",
+                  "});"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Search by cuisine",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/restaurants/search/cuisine/{{cuisine}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Restaurant details",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/restaurants/{{restaurant_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Restaurant menu",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/restaurants/{{restaurant_id}}/menu"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is an array', function () { pm.expect(pm.response.json()).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST Create restaurant",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Postman Bistro\",\n  \"description\": \"Created from Postman collection\",\n  \"cuisineType\": \"{{cuisine}}\",\n  \"address\": \"42 API Lane\",\n  \"city\": \"{{city}}\",\n  \"phone\": \"+233222222222\",\n  \"estimatedDeliveryMinutes\": 30\n}"
+            },
+            "url": "{{base_url}}/api/restaurants"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Restaurant id is returned', function () { pm.expect(data.id).to.exist; });",
+                  "pm.environment.set('restaurant_id', String(data.id));",
+                  "pm.collectionVariables.set('restaurant_id', String(data.id));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST Add menu item",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Postman Burger\",\n  \"description\": \"Collection test item\",\n  \"price\": 25.50,\n  \"category\": \"Main\",\n  \"imageUrl\": \"\"\n}"
+            },
+            "url": "{{base_url}}/api/restaurants/{{restaurant_id}}/menu"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Menu item id is returned', function () { pm.expect(data.id).to.exist; });",
+                  "pm.environment.set('menu_item_id', String(data.id));",
+                  "pm.collectionVariables.set('menu_item_id', String(data.id));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PUT Update menu item",
+          "request": {
+            "method": "PUT",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Postman Burger Updated\",\n  \"description\": \"Updated from collection\",\n  \"price\": 27.00,\n  \"category\": \"Main\",\n  \"imageUrl\": \"\"\n}"
+            },
+            "url": "{{base_url}}/api/restaurants/menu/{{menu_item_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PATCH Toggle item availability",
+          "request": {
+            "method": "PATCH",
+            "url": "{{base_url}}/api/restaurants/menu/{{menu_item_id}}/toggle"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 204', function () { pm.response.to.have.status(204); });",
+                  "const token = pm.variables.get('token');",
+                  "if (token) {",
+                  "  pm.sendRequest({",
+                  "    url: `${pm.variables.get('base_url')}/api/restaurants/menu/${pm.variables.get('menu_item_id')}/toggle`,",
+                  "    method: 'PATCH',",
+                  "    header: { Authorization: `Bearer ${token}` }",
+                  "  }, function (err, res) {",
+                  "    pm.test('Re-toggle item to keep availability', function () {",
+                  "      pm.expect(err).to.eql(null);",
+                  "      pm.expect(res).to.have.property('code', 204);",
+                  "    });",
+                  "  });",
+                  "}"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "POST Place order",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"restaurantId\": {{restaurant_id}},\n  \"items\": [\n    {\n      \"menuItemId\": {{menu_item_id}},\n      \"quantity\": 1,\n      \"specialInstructions\": \"No onions\"\n    }\n  ],\n  \"deliveryAddress\": \"18 Order Street\",\n  \"specialInstructions\": \"Call on arrival\"\n}"
+            },
+            "url": "{{base_url}}/api/orders"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 201', function () { pm.response.to.have.status(201); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Order id is returned', function () { pm.expect(data.id).to.exist; });",
+                  "pm.environment.set('order_id', String(data.id));",
+                  "pm.collectionVariables.set('order_id', String(data.id));"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Order by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/orders/{{order_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET My orders",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/orders/my-orders"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is an array', function () { pm.expect(pm.response.json()).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Restaurant orders",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/orders/restaurant/{{restaurant_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PATCH Update order status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"{{order_status}}\"\n}"
+            },
+            "url": "{{base_url}}/api/orders/{{order_id}}/status"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Order status updated', function () { pm.expect(data.status).to.eql(pm.variables.get('order_status')); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "POST Cancel order",
+          "request": {
+            "method": "POST",
+            "url": "{{base_url}}/api/orders/{{order_id}}/cancel"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deliveries",
+      "item": [
+        {
+          "name": "GET Delivery by ID",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/deliveries/{{delivery_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Delivery by order",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/deliveries/order/{{order_id}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const data = pm.response.json();",
+                  "if (data.id) { pm.environment.set('delivery_id', String(data.id)); pm.collectionVariables.set('delivery_id', String(data.id)); }"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "GET Deliveries by status",
+          "request": {
+            "method": "GET",
+            "url": "{{base_url}}/api/deliveries/status/{{delivery_status}}"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Response is an array', function () { pm.expect(pm.response.json()).to.be.an('array'); });"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "name": "PATCH Update delivery status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"{{delivery_status}}\"\n}"
+            },
+            "url": "{{base_url}}/api/deliveries/{{delivery_id}}/status"
+          },
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const data = pm.response.json();",
+                  "pm.test('Delivery status updated', function () { pm.expect(data.status).to.eql(pm.variables.get('delivery_status')); });"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

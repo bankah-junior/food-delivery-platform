@@ -339,38 +339,38 @@
 ## Epic 7: Testing and Documentation
 
 ### 7.1 Create Postman Collection
-- [ ] Set up environment variables (base_url, token)
-- [ ] Create folder: Authentication
-  - [ ] POST Register customer
-  - [ ] POST Login (save token to environment)
-- [ ] Create folder: Customers
-  - [ ] GET My profile
-  - [ ] GET Customer by ID
-  - [ ] PUT Update profile
-- [ ] Create folder: Restaurants
-  - [ ] GET All restaurants
-  - [ ] GET Search by city
-  - [ ] GET Search by cuisine
-  - [ ] GET Restaurant details
-  - [ ] GET Restaurant menu
-  - [ ] POST Create restaurant
-  - [ ] POST Add menu item
-  - [ ] PUT Update menu item
-  - [ ] PATCH Toggle item availability
-- [ ] Create folder: Orders
-  - [ ] POST Place order
-  - [ ] GET Order by ID
-  - [ ] GET My orders
-  - [ ] GET Restaurant orders
-  - [ ] PATCH Update order status
-  - [ ] POST Cancel order
-- [ ] Create folder: Deliveries
-  - [ ] GET Delivery by ID
-  - [ ] GET Delivery by order
-  - [ ] GET Deliveries by status
-  - [ ] PATCH Update delivery status
-- [ ] Add pre-request scripts for token management
-- [ ] Add tests for status codes and response validation
+- [x] Set up environment variables (base_url, token)
+- [x] Create folder: Authentication
+  - [x] POST Register customer
+  - [x] POST Login (save token to environment)
+- [x] Create folder: Customers
+  - [x] GET My profile
+  - [x] GET Customer by ID
+  - [x] PUT Update profile
+- [x] Create folder: Restaurants
+  - [x] GET All restaurants
+  - [x] GET Search by city
+  - [x] GET Search by cuisine
+  - [x] GET Restaurant details
+  - [x] GET Restaurant menu
+  - [x] POST Create restaurant
+  - [x] POST Add menu item
+  - [x] PUT Update menu item
+  - [x] PATCH Toggle item availability
+- [x] Create folder: Orders
+  - [x] POST Place order
+  - [x] GET Order by ID
+  - [x] GET My orders
+  - [x] GET Restaurant orders
+  - [x] PATCH Update order status
+  - [x] POST Cancel order
+- [x] Create folder: Deliveries
+  - [x] GET Delivery by ID
+  - [x] GET Delivery by order
+  - [x] GET Deliveries by status
+  - [x] PATCH Update delivery status
+- [x] Add pre-request scripts for token management
+- [x] Add tests for status codes and response validation
 
 ### 7.2 End-to-End Testing
 - [ ] Test complete order flow:
