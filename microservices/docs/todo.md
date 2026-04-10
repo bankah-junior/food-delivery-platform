@@ -391,13 +391,13 @@
   - [x] Invalid JWT token
 
 ### 7.3 Fault Tolerance Testing
-- [ ] Stop Customer Service and test order placement:
-  - [ ] Verify circuit breaker fallback works
-  - [ ] Verify meaningful error returned
-- [ ] Stop Restaurant Service and test order placement
-- [ ] Stop Delivery Service and verify orders can still be placed
-- [ ] Test circuit breaker state transitions
-- [ ] Restart services and verify auto-recovery
+- [x] Stop Customer Service and test order placement:
+  - [x] Verify circuit breaker fallback works
+  - [x] Verify meaningful error returned
+- [x] Stop Restaurant Service and test order placement
+- [x] Stop Delivery Service and verify orders can still be placed
+- [x] Test circuit breaker state transitions
+- [x] Restart services and verify auto-recovery
 
 ### 7.4 Create Architecture Diagrams
 - [ ] Draw current monolith architecture diagram
