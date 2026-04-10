@@ -456,10 +456,10 @@
 - [x] Add custom health indicators for database and RabbitMQ
 
 ### 8.2 Add Distributed Tracing (Optional)
-- [ ] Add Spring Cloud Sleuth dependency
-- [ ] Configure trace and span IDs in logs
-- [ ] Set up Zipkin server (optional)
-- [ ] Test tracing across service calls
+- [x] Add Spring Cloud Sleuth dependency
+- [x] Configure trace and span IDs in logs
+- [x] Set up Zipkin server (optional)
+- [x] Test tracing across service calls
 
 ### 8.3 Performance Testing
 - [ ] Use JMeter/Gatling to load test order placement

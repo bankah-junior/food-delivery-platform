@@ -35,6 +35,14 @@ services:
     networks:
       - food-delivery-network
 
+  zipkin:
+    image: openzipkin/zipkin:3
+    container_name: zipkin
+    ports:
+      - "9411:9411"
+    networks:
+      - food-delivery-network
+
   eureka-server:
     build:
       context: ./microservices/eureka-server
@@ -58,6 +66,7 @@ services:
       DB_PASSWORD: postgres
       JWT_SECRET: myMonolithSecretKeyThatShouldBeExternalizedInMicroservices2024FoodDelivery!
       EUREKA_SERVER_URL: http://eureka-server:8761/eureka/
+      ZIPKIN_ENDPOINT: http://zipkin:9411/api/v2/spans
     depends_on:
       postgres:
         condition: service_healthy
@@ -81,6 +90,7 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       EUREKA_SERVER_URL: http://eureka-server:8761/eureka/
+      ZIPKIN_ENDPOINT: http://zipkin:9411/api/v2/spans
     depends_on:
       postgres:
         condition: service_healthy
@@ -104,6 +114,7 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       EUREKA_SERVER_URL: http://eureka-server:8761/eureka/
+      ZIPKIN_ENDPOINT: http://zipkin:9411/api/v2/spans
       RABBITMQ_HOST: rabbitmq
       RABBITMQ_PORT: 5672
       RABBITMQ_USER: guest
@@ -138,6 +149,7 @@ services:
       DB_USER: postgres
       DB_PASSWORD: postgres
       EUREKA_SERVER_URL: http://eureka-server:8761/eureka/
+      ZIPKIN_ENDPOINT: http://zipkin:9411/api/v2/spans
       RABBITMQ_HOST: rabbitmq
       RABBITMQ_PORT: 5672
       RABBITMQ_USER: guest
@@ -169,6 +181,7 @@ services:
     environment:
       EUREKA_SERVER_URL: http://eureka-server:8761/eureka/
       JWT_SECRET: myMonolithSecretKeyThatShouldBeExternalizedInMicroservices2024FoodDelivery!
+      ZIPKIN_ENDPOINT: http://zipkin:9411/api/v2/spans
     depends_on:
       eureka-server:
         condition: service_healthy

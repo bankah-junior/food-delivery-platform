@@ -23,17 +23,6 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
-
-app:
-  rabbit:
-    listeners:
-      enabled: true
-
-management:
   endpoint:
     health:
       show-details: always
@@ -45,6 +34,22 @@ management:
     distribution:
       percentiles-histogram:
         http.server.requests: true
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_ENDPOINT:http://zipkin:9411/api/v2/spans}
+
+app:
+  rabbit:
+    listeners:
+      enabled: true
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
 
 eureka:
   client:
