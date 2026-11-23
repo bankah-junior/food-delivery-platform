@@ -1,0 +1,69 @@
+# =============================================================
+# Food Delivery Platform Monolith — Application Configuration
+# =============================================================
+# NOTE: This monolith uses a SINGLE database for all domains.
+# When refactoring into microservices, each service should
+# have its own database (database-per-service pattern).
+# =============================================================
+
+server:
+  port: 8081
+
+spring:
+  application:
+    name: customer-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customer_db
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:admin}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+
+# --- JWT Configuration ---
+app:
+  jwt:
+    secret: ${JWT_SECRET:myMonolithSecretKeyThatShouldBeExternalizedInMicroservices2024FoodDelivery!}
+    expiration-ms: 86400000  # 24 hours
+
+# --- Actuator ---
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_ENDPOINT:http://localhost:9411/api/v2/spans}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://localhost:8761/eureka/}
+  instance:
+    prefer-ip-address: true

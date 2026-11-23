@@ -1,0 +1,69 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+        - id: customer-service-route
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/customers/**
+        - id: restaurant-service-route
+          uri: lb://restaurant-service
+          predicates:
+            - Path=/api/restaurants/**
+        - id: order-service-route
+          uri: lb://order-service
+          predicates:
+            - Path=/api/orders/**
+        - id: delivery-service-route
+          uri: lb://delivery-service
+          predicates:
+            - Path=/api/deliveries/**
+        - id: auth-service-route
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/auth/**
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_ENDPOINT:http://zipkin:9411/api/v2/spans}
+
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_SERVER_URL:http://eureka-server:8761/eureka/}
+  instance:
+    prefer-ip-address: true
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:myMonolithSecretKeyThatShouldBeExternalizedInMicroservices2024FoodDelivery!}
+
+gateway:
+  rate-limit:
+    orders:
+      requests-per-minute: 10

@@ -1,0 +1,31 @@
+flowchart LR
+  Client[Web or Mobile Client]
+
+    subgraph Mono[Spring Boot Monolith :8080]
+      API[REST Controllers]
+      Auth[Auth and JWT]
+      Cust[Customer Domain]
+      Rest[Restaurant and Menu Domain]
+      Order[Order Domain]
+      Del[Delivery Domain]
+      API --> Auth
+      API --> Cust
+      API --> Rest
+      API --> Order
+      API --> Del
+      Order --> Cust
+      Order --> Rest
+      Order --> Del
+      Del --> Order
+      Rest --> Cust
+    end
+
+    DB[(Single Database)]
+
+    Client --> API
+    Mono --> DB
+
+    classDef app fill:#f4f7ff,stroke:#1e3a8a,stroke-width:1px,color:#0f172a;
+    classDef db fill:#ecfeff,stroke:#0f766e,stroke-width:1px,color:#042f2e;
+    class Mono,API,Auth,Cust,Rest,Order,Del app;
+    class DB db;
