@@ -1,0 +1,2801 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1775832706180,89,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,82,0,52
+1775832706331,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832706336,17,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,16,0,1
+1775832706353,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832706359,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832706376,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,0
+1775832706382,18,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,18,0,1
+1775832706401,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832706407,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832706422,7,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,7,0,1
+1775832706431,23,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,21,0,2
+1775832706455,9,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,9,0,1
+1775832706465,17,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,16,0,0
+1775832706483,6,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,6,0,1
+1775832706490,20,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,19,0,2
+1775832706511,11,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,11,0,1
+1775832706523,20,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,20,0,1
+1775832706544,14,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,14,0,1
+1775832706558,19,POST Login,404,Not Found,Order Concurrency Thread Group 1-1,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,18,0,1
+1775832706578,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-1,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832707079,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,0
+1775832707095,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832707100,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832707116,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832707121,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832707138,6,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,6,0,1
+1775832707144,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832707158,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832707163,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,0
+1775832707179,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832707184,26,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,25,0,0
+1775832707211,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832707216,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832707234,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832707239,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832707252,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832707257,17,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,16,0,1
+1775832707275,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832707280,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-2,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832707295,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-2,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832708078,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832708091,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832708097,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832708112,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832708115,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832708129,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832708134,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,16,0,1
+1775832708151,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832708156,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832708167,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832708171,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832708182,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832708185,46,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,44,0,1
+1775832708233,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832708238,20,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,19,0,0
+1775832708259,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832708263,17,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,16,0,1
+1775832708281,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832708285,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-3,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832708300,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-3,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832709077,22,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,21,0,1
+1775832709100,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832709104,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832709118,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832709124,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,12,0,0
+1775832709137,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832709142,19,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832709162,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832709166,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832709179,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832709183,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832709196,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832709200,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832709214,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832709219,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832709235,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832709239,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832709252,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832709255,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-4,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832709268,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-4,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710077,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832710090,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710095,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832710110,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710114,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832710126,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710131,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832710144,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710148,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832710159,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832710164,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832710179,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710183,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832710197,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710201,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832710214,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832710219,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832710234,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832710240,17,POST Login,404,Not Found,Order Concurrency Thread Group 1-5,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,17,0,0
+1775832710262,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-5,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832711076,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832711088,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832711092,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",569,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832711106,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832711112,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832711127,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832711131,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832711140,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832711144,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,9,0,1
+1775832711154,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832711158,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832711171,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832711177,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",569,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832711189,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832711192,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832711203,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832711207,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832711220,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832711224,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-6,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832711239,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-6,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,0
+1775832712074,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832712087,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832712091,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832712104,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832712108,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832712123,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832712128,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832712139,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,2
+1775832712145,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832712156,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832712161,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832712172,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832712177,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",568,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832712192,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832712197,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832712213,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832712218,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832712233,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832712238,25,POST Login,404,Not Found,Order Concurrency Thread Group 1-7,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,24,0,6
+1775832712264,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-7,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832713075,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832713089,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832713092,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",569,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832713104,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832713108,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832713119,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832713123,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832713138,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832713142,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832713153,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832713157,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832713169,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832713173,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832713187,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832713192,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832713208,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832713213,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,0
+1775832713227,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832713231,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-8,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832713244,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-8,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832714074,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832714091,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832714096,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832714108,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832714113,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832714125,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832714129,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832714143,7,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,7,0,1
+1775832714151,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,0
+1775832714164,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832714169,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832714184,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832714189,20,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,19,0,1
+1775832714210,8,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,8,0,3
+1775832714219,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832714233,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832714237,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832714252,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832714256,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-9,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,0
+1775832714269,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-9,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832715074,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832715087,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832715090,9,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832715100,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832715103,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832715117,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832715121,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832715132,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832715137,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832715148,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832715152,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832715165,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832715170,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,15,0,0
+1775832715186,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832715190,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832715203,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832715208,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832715221,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832715225,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-10,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",571,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832715240,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-10,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832716075,26,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,26,0,1
+1775832716104,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832716109,18,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,17,0,0
+1775832716128,6,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,6,0,1
+1775832716134,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832716150,7,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,7,0,1
+1775832716157,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832716174,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832716178,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,0
+1775832716193,6,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,6,0,1
+1775832716199,19,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,17,0,1
+1775832716219,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832716224,18,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,17,0,0
+1775832716242,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832716249,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,0
+1775832716266,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832716271,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,1
+1775832716286,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832716291,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-11,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832716303,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-11,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832717075,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832717089,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832717093,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832717104,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832717108,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832717119,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832717123,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832717134,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832717139,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832717152,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832717155,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832717166,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832717170,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832717181,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832717185,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832717197,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,0
+1775832717202,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832717218,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832717222,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-12,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832717238,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-12,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832718074,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832718088,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832718092,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832718103,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832718106,9,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,9,0,1
+1775832718116,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832718120,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832718130,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832718133,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832718145,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832718148,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832718162,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832718166,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832718178,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832718181,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832718193,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832718197,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832718209,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832718212,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-13,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832718225,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-13,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832719077,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832719092,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832719097,19,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,19,0,1
+1775832719117,6,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,6,0,2
+1775832719123,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,14,0,0
+1775832719138,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832719143,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,14,0,0
+1775832719158,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832719163,29,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,28,0,1
+1775832719193,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832719198,17,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,16,0,0
+1775832719216,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832719222,24,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,23,0,0
+1775832719246,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832719253,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832719270,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832719275,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832719290,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832719294,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-14,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,0
+1775832719310,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-14,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832720076,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832720089,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832720094,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",563,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832720105,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832720110,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832720123,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832720126,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,9,0,1
+1775832720136,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832720140,9,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,8,0,0
+1775832720149,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832720153,9,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,8,0,0
+1775832720162,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832720165,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832720177,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832720182,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832720193,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832720197,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832720211,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832720214,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-15,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832720228,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-15,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832721075,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832721087,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832721091,9,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832721101,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832721105,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832721117,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832721122,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832721135,7,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,7,0,3
+1775832721142,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832721154,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832721157,9,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,9,0,1
+1775832721166,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832721169,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832721180,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832721183,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832721195,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832721200,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832721214,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832721217,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-16,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,9,0,1
+1775832721228,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-16,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832722075,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832722088,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832722092,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832722102,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832722106,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832722117,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832722120,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832722132,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832722136,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832722149,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832722153,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832722164,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832722167,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832722178,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832722182,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832722193,2,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,2,0,0
+1775832722196,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832722208,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,0
+1775832722213,15,POST Login,404,Not Found,Order Concurrency Thread Group 1-17,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,14,0,0
+1775832722229,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-17,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832723075,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832723088,6,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,6,0,1
+1775832723094,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832723105,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832723110,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832723121,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832723125,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832723136,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832723141,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832723154,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,0
+1775832723159,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,1
+1775832723174,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832723179,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832723190,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832723194,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,0
+1775832723206,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832723211,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832723224,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832723230,18,POST Login,404,Not Found,Order Concurrency Thread Group 1-18,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,17,0,1
+1775832723249,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-18,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832724075,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832724086,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832724090,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832724104,6,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,6,0,1
+1775832724111,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,0
+1775832724124,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832724128,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832724139,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832724143,9,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,8,0,0
+1775832724153,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832724156,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832724169,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832724176,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832724188,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832724193,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832724204,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832724209,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,9,0,0
+1775832724220,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832724224,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-19,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832724236,8,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-19,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,8,0,1
+1775832725074,11,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832725086,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,1
+1775832725090,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",562,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832725101,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832725106,14,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,13,0,0
+1775832725121,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832725127,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,9,0,1
+1775832725137,4,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,4,0,1
+1775832725141,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,1
+1775832725152,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832725156,10,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,10,0,0
+1775832725167,3,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,3,0,0
+1775832725170,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,12,0,0
+1775832725183,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832725188,16,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",565,272,1,1,http://api-gateway:8080/api/auth/login,15,0,1
+1775832725205,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832725210,12,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",570,272,1,1,http://api-gateway:8080/api/auth/login,11,0,1
+1775832725222,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,1
+1775832725227,13,POST Login,404,Not Found,Order Concurrency Thread Group 1-20,text,false,"Test failed: code expected to equal /
+
+****** received  : [[[404]]]
+
+****** comparison: [[[200]]]
+
+/",564,272,1,1,http://api-gateway:8080/api/auth/login,12,0,1
+1775832725241,5,POST Place Order,401,Unauthorized,Order Concurrency Thread Group 1-20,,false,"Test failed: code expected to equal /
+
+****** received  : [[[4]]]01
+
+****** comparison: [[[2]]]01
+
+/",267,374,1,1,http://api-gateway:8080/api/orders,5,0,0

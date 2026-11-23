@@ -1,0 +1,706 @@
+{
+  "info": {
+    "_postman_id": "fb0df741-33c3-43e8-ba75-ab5b4aa6068b",
+    "name": "food_delivery_app",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51964541",
+    "_collection_link": "https://go.postman.co/collection/51964541-fb0df741-33c3-43e8-ba75-ab5b4aa6068b?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Register",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"john\",\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"phone\": \"+1-555-0100\",\r\n  \"deliveryAddress\": \"123 Main St\",\r\n  \"city\": \"Lagos\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{cs_url}}/auth/register",
+              "host": [
+                "{{cs_url}}"
+              ],
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"username\": \"john\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{cs_url}}/auth/login",
+              "host": [
+                "{{cs_url}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Customers",
+      "item": [
+        {
+          "name": "My Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{cs_url}}/customers/me",
+              "host": [
+                "{{cs_url}}"
+              ],
+              "path": [
+                "customers",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{cs_url}}/customers/1",
+              "host": [
+                "{{cs_url}}"
+              ],
+              "path": [
+                "customers",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update My Profile",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"john\",\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\",\r\n  \"firstName\": \"John\",\r\n  \"lastName\": \"Doe\",\r\n  \"phone\": \"+1-555-0101\",\r\n  \"deliveryAddress\": \"123 Main St\",\r\n  \"city\": \"Lagos\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{cs_url}}/customers/me",
+              "host": [
+                "{{cs_url}}"
+              ],
+              "path": [
+                "customers",
+                "me"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Restaurants",
+      "item": [
+        {
+          "name": "All Active Restaurants",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{rs_url}}/restaurants/search/all",
+              "host": [
+                "{{rs_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "search",
+                "all"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search By City",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{rs_url}}/restaurants/search/city/lagos",
+              "host": [
+                "{{rs_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "search",
+                "city",
+                "lagos"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search By Cuisine",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{rs_url}}/restaurants/search/cuisine/nigerian",
+              "host": [
+                "{{rs_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "search",
+                "cuisine",
+                "nigerian"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{rs_url}}/restaurants/1",
+              "host": [
+                "{{rs_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Restaurant Menu",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/restaurants/i1/fuf",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "i1",
+                "fuf"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Restaurant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"ownerId\": 1,\r\n  \"name\": \"Mama's Kitchen\",\r\n  \"description\": \"Traditional Nigerian cuisine\",\r\n  \"cuisineType\": \"Nigerian\",\r\n  \"address\": \"45 Marina Road\",\r\n  \"city\": \"Lagos\",\r\n  \"phone\": \"+234-1-555-0200\",\r\n  \"estimatedDeliveryMinutes\": 35\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{rs_url}}/restaurants",
+              "host": [
+                "{{rs_url}}"
+              ],
+              "path": [
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Menu Item",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "// { \"name\": \"Jollof Rice\", \"description\": \"Smoky party-style jollof\", \"price\": 2500.00, \"category\": \"Main\" }\r\n// { \"name\": \"Suya\", \"description\": \"Spicy grilled beef skewers\", \"price\": 1500.00, \"category\": \"Appetizer\" }\r\n{ \"name\": \"Chapman\", \"description\": \"Classic Nigerian cocktail\", \"price\": 800.00, \"category\": \"Drink\" }\r\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{rs_url}}/restaurants/1/menu",
+              "host": [
+                "{{rs_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "1",
+                "menu"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Menu Item",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"fufu\",\r\n    \"price\": 100\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/restaurants/menu/1",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "menu",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Toggle Item Availability",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/restaurants/menu/1/toggle",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "restaurants",
+                "menu",
+                "1",
+                "toggle"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Place New Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"restaurantId\": 2,\r\n  \"items\": [\r\n    { \"menuItemId\": 3, \"quantity\": 2 },\r\n    { \"menuItemId\": 4, \"quantity\": 1 }\r\n  ],\r\n  \"specialInstructions\": \"Extra pepper please\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{os_url}}/orders",
+              "host": [
+                "{{os_url}}"
+              ],
+              "path": [
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{os_url}}/orders/1",
+              "host": [
+                "{{os_url}}"
+              ],
+              "path": [
+                "orders",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get My Order History",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{os_url}}/orders/my-orders",
+              "host": [
+                "{{os_url}}"
+              ],
+              "path": [
+                "orders",
+                "my-orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Restaurant's Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{os_url}}/orders/restaurant/1",
+              "host": [
+                "{{os_url}}"
+              ],
+              "path": [
+                "orders",
+                "restaurant",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Order Status",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"status\": \"placed\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{os_url}}/orders/1/status?status=delivered",
+              "host": [
+                "{{os_url}}"
+              ],
+              "path": [
+                "orders",
+                "1",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "delivered"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cancel An Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "X-User-Id",
+                "value": "1",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{os_url}}/orders/1/cancel",
+              "host": [
+                "{{os_url}}"
+              ],
+              "path": [
+                "orders",
+                "1",
+                "cancel"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Deliveries",
+      "item": [
+        {
+          "name": "Get By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ds_url}}/deliveries/1",
+              "host": [
+                "{{ds_url}}"
+              ],
+              "path": [
+                "deliveries",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delivery For An Order",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ds_url}}/deliveries/order/1",
+              "host": [
+                "{{ds_url}}"
+              ],
+              "path": [
+                "deliveries",
+                "order",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List Deliveries By Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{ds_url}}/deliveries/status/pending",
+              "host": [
+                "{{ds_url}}"
+              ],
+              "path": [
+                "deliveries",
+                "status",
+                "pending"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Delivery Status",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{ds_url}}/deliveries/1/status?status=failed",
+              "host": [
+                "{{ds_url}}"
+              ],
+              "path": [
+                "deliveries",
+                "1",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "failed"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2huIiwicm9sZSI6IkNVU1RPTUVSIiwiaWF0IjoxNzc1NzIxNzY1LCJleHAiOjE3NzU4MDgxNjV9.9eM-gTcPVVEKWhKM-qqr_j6ewj6mix8WXa_84--p_dYPyOG04H2Vmwp0yf8v-A13sxi_I9-ARqH6qAEoniwzHQ",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": ""
+    },
+    {
+      "key": "cs_url",
+      "value": ""
+    },
+    {
+      "key": "rs_url",
+      "value": ""
+    },
+    {
+      "key": "os_url",
+      "value": ""
+    },
+    {
+      "key": "ds_url",
+      "value": ""
+    }
+  ]
+}

@@ -1,0 +1,1053 @@
+{
+    "runId":  "20260410-144034",
+    "generatedUser":  "perf_user_20260410-144034",
+    "baseUrl":  "http://localhost:8080",
+    "concurrentUsers":  8,
+    "requestsPerUser":  3,
+    "totalRequests":  24,
+    "successfulOrders":  10,
+    "failedOrders":  14,
+    "statusCodeBreakdown":  {
+                                "201":  10,
+                                "429":  14
+                            },
+    "actuator":  {
+                     "circuitBreakers":  {
+                                             "circuitBreakers":  {
+                                                                     "CustomerServiceClientgetCustomerByIdLong":  {
+                                                                                                                      "failureRate":  "0.0%",
+                                                                                                                      "slowCallRate":  "0.0%",
+                                                                                                                      "failureRateThreshold":  "50.0%",
+                                                                                                                      "slowCallRateThreshold":  "100.0%",
+                                                                                                                      "bufferedCalls":  10,
+                                                                                                                      "failedCalls":  0,
+                                                                                                                      "slowCalls":  0,
+                                                                                                                      "slowFailedCalls":  0,
+                                                                                                                      "notPermittedCalls":  0,
+                                                                                                                      "state":  "CLOSED"
+                                                                                                                  },
+                                                                     "RestaurantServiceClientgetMenuByRestaurantIdLong":  {
+                                                                                                                              "failureRate":  "0.0%",
+                                                                                                                              "slowCallRate":  "0.0%",
+                                                                                                                              "failureRateThreshold":  "50.0%",
+                                                                                                                              "slowCallRateThreshold":  "100.0%",
+                                                                                                                              "bufferedCalls":  10,
+                                                                                                                              "failedCalls":  0,
+                                                                                                                              "slowCalls":  0,
+                                                                                                                              "slowFailedCalls":  0,
+                                                                                                                              "notPermittedCalls":  0,
+                                                                                                                              "state":  "CLOSED"
+                                                                                                                          },
+                                                                     "RestaurantServiceClientgetRestaurantByIdLong":  {
+                                                                                                                          "failureRate":  "0.0%",
+                                                                                                                          "slowCallRate":  "0.0%",
+                                                                                                                          "failureRateThreshold":  "50.0%",
+                                                                                                                          "slowCallRateThreshold":  "100.0%",
+                                                                                                                          "bufferedCalls":  10,
+                                                                                                                          "failedCalls":  0,
+                                                                                                                          "slowCalls":  0,
+                                                                                                                          "slowFailedCalls":  0,
+                                                                                                                          "notPermittedCalls":  0,
+                                                                                                                          "state":  "CLOSED"
+                                                                                                                      },
+                                                                     "RestaurantServiceClientvalidateMenuItemsLongList":  {
+                                                                                                                              "failureRate":  "0.0%",
+                                                                                                                              "slowCallRate":  "0.0%",
+                                                                                                                              "failureRateThreshold":  "50.0%",
+                                                                                                                              "slowCallRateThreshold":  "100.0%",
+                                                                                                                              "bufferedCalls":  10,
+                                                                                                                              "failedCalls":  0,
+                                                                                                                              "slowCalls":  0,
+                                                                                                                              "slowFailedCalls":  0,
+                                                                                                                              "notPermittedCalls":  0,
+                                                                                                                              "state":  "CLOSED"
+                                                                                                                          },
+                                                                     "customerService":  {
+                                                                                             "failureRate":  "-1.0%",
+                                                                                             "slowCallRate":  "-1.0%",
+                                                                                             "failureRateThreshold":  "50.0%",
+                                                                                             "slowCallRateThreshold":  "100.0%",
+                                                                                             "bufferedCalls":  0,
+                                                                                             "failedCalls":  0,
+                                                                                             "slowCalls":  0,
+                                                                                             "slowFailedCalls":  0,
+                                                                                             "notPermittedCalls":  0,
+                                                                                             "state":  "CLOSED"
+                                                                                         },
+                                                                     "restaurantService":  {
+                                                                                               "failureRate":  "-1.0%",
+                                                                                               "slowCallRate":  "-1.0%",
+                                                                                               "failureRateThreshold":  "50.0%",
+                                                                                               "slowCallRateThreshold":  "100.0%",
+                                                                                               "bufferedCalls":  0,
+                                                                                               "failedCalls":  0,
+                                                                                               "slowCalls":  0,
+                                                                                               "slowFailedCalls":  0,
+                                                                                               "notPermittedCalls":  0,
+                                                                                               "state":  "CLOSED"
+                                                                                           }
+                                                                 }
+                                         },
+                     "circuitBreakerEvents":  {
+                                                  "circuitBreakerEvents":  [
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:22:09.886428773Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  443,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:22:09.957183621Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  58,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:22:10.005108406Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  33,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:22:10.006575628Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  43,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:25:43.860561507Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  17,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:25:43.878014189Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  16,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:25:43.896267655Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  15,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:25:43.896724001Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  18,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:26:08.038260096Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  16,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:26:08.052908478Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  13,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:26:08.079384179Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  24,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:26:08.080250835Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  26,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.846084073Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  24,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.878152852Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  31,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.903736651Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  23,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.904205772Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  25,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.940945380Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  13,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.964128897Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  22,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.995366133Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  29,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:00.995936287Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  31,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:01.851414790Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  11,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:01.864542313Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  12,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:01.884110952Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  18,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:01.884433523Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  19,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:08.807953138Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  10,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:08.818373465Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  10,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:08.831788909Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  11,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:08.832230570Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  13,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.650512727Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  31,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.674371253Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  23,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.722311184Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  46,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.722855994Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  47,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.856937699Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  28,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.885663816Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  30,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.888046983Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  30,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.906714887Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  20,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.947590634Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  52,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:35.971298753Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  77,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.024785630Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  67,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.027132864Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  110,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.069800911Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  35,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.105036779Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  34,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.153095033Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  15,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.155005645Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  48,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.155502119Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  49,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.193492231Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  39,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.242777174Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  45,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.243346512Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  49,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.359350946Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  27,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.389010375Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  29,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.432827777Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  40,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:36.433411902Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  43,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.154886980Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  14,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.167238671Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  11,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.180707988Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  12,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.181079112Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  13,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.234895807Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  8,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.244216894Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  8,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.254673029Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  9,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.255152860Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  10,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.287730790Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  11,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.298300776Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  9,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.314932745Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  15,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:38.315329879Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  16,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "CustomerServiceClientgetCustomerByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:44.183785548Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  10,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetRestaurantByIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:44.203821882Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  19,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientgetMenuByRestaurantIdLong",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:44.243344860Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  35,
+                                                                                   "stateTransition":  null
+                                                                               },
+                                                                               {
+                                                                                   "circuitBreakerName":  "RestaurantServiceClientvalidateMenuItemsLongList",
+                                                                                   "type":  "SUCCESS",
+                                                                                   "creationTime":  "2026-04-10T14:40:44.243714264Z[Etc/UTC]",
+                                                                                   "errorMessage":  null,
+                                                                                   "durationInMs":  39,
+                                                                                   "stateTransition":  null
+                                                                               }
+                                                                           ]
+                                              },
+                     "dbPoolActive":  {
+                                          "name":  "hikaricp.connections.active",
+                                          "description":  "Active connections",
+                                          "measurements":  [
+                                                               {
+                                                                   "statistic":  "VALUE",
+                                                                   "value":  0.0
+                                                               }
+                                                           ],
+                                          "availableTags":  [
+                                                                {
+                                                                    "tag":  "pool",
+                                                                    "values":  [
+                                                                                   "HikariPool-1"
+                                                                               ]
+                                                                }
+                                                            ]
+                                      },
+                     "dbPoolPending":  {
+                                           "name":  "hikaricp.connections.pending",
+                                           "description":  "Pending threads",
+                                           "measurements":  [
+                                                                {
+                                                                    "statistic":  "VALUE",
+                                                                    "value":  0.0
+                                                                }
+                                                            ],
+                                           "availableTags":  [
+                                                                 {
+                                                                     "tag":  "pool",
+                                                                     "values":  [
+                                                                                    "HikariPool-1"
+                                                                                ]
+                                                                 }
+                                                             ]
+                                       }
+                 },
+    "rabbitmq":  {
+                     "overview":  {
+                                      "management_version":  "3.13.7",
+                                      "rates_mode":  "basic",
+                                      "sample_retention_policies":  {
+                                                                        "global":  [
+                                                                                       600,
+                                                                                       3600,
+                                                                                       28800,
+                                                                                       86400
+                                                                                   ],
+                                                                        "basic":  [
+                                                                                      600,
+                                                                                      3600
+                                                                                  ],
+                                                                        "detailed":  [
+                                                                                         600
+                                                                                     ]
+                                                                    },
+                                      "exchange_types":  [
+                                                             {
+                                                                 "name":  "direct",
+                                                                 "description":  "AMQP direct exchange, as per the AMQP specification",
+                                                                 "enabled":  true
+                                                             },
+                                                             {
+                                                                 "name":  "fanout",
+                                                                 "description":  "AMQP fanout exchange, as per the AMQP specification",
+                                                                 "enabled":  true
+                                                             },
+                                                             {
+                                                                 "name":  "headers",
+                                                                 "description":  "AMQP headers exchange, as per the AMQP specification",
+                                                                 "enabled":  true
+                                                             },
+                                                             {
+                                                                 "name":  "topic",
+                                                                 "description":  "AMQP topic exchange, as per the AMQP specification",
+                                                                 "enabled":  true
+                                                             },
+                                                             {
+                                                                 "name":  "x-federation-upstream",
+                                                                 "description":  "Federation upstream helper exchange",
+                                                                 "internal_purpose":  "federation",
+                                                                 "enabled":  true
+                                                             }
+                                                         ],
+                                      "product_version":  "3.13.7",
+                                      "product_name":  "RabbitMQ",
+                                      "rabbitmq_version":  "3.13.7",
+                                      "cluster_name":  "rabbit@5d7f78cd70ca",
+                                      "erlang_version":  "26.2.5.16",
+                                      "erlang_full_version":  "Erlang/OTP 26 [erts-14.2.5.12] [source] [64-bit] [smp:8:8] [ds:8:8:10] [async-threads:1] [jit:ns]",
+                                      "release_series_support_status":  "supported",
+                                      "disable_stats":  false,
+                                      "is_op_policy_updating_enabled":  true,
+                                      "enable_queue_totals":  false,
+                                      "message_stats":  {
+                                                            "get":  0,
+                                                            "deliver":  47,
+                                                            "confirm":  0,
+                                                            "ack":  47,
+                                                            "publish":  47,
+                                                            "disk_reads":  0,
+                                                            "disk_writes":  38,
+                                                            "get_empty":  0,
+                                                            "get_no_ack":  0,
+                                                            "deliver_no_ack":  0,
+                                                            "redeliver":  0,
+                                                            "drop_unroutable":  0,
+                                                            "return_unroutable":  0,
+                                                            "deliver_get":  47,
+                                                            "get_empty_details":  {
+                                                                                      "rate":  0.0
+                                                                                  },
+                                                            "deliver_get_details":  {
+                                                                                        "rate":  1.8
+                                                                                    },
+                                                            "ack_details":  {
+                                                                                "rate":  1.8
+                                                                            },
+                                                            "redeliver_details":  {
+                                                                                      "rate":  0.0
+                                                                                  },
+                                                            "deliver_no_ack_details":  {
+                                                                                           "rate":  0.0
+                                                                                       },
+                                                            "deliver_details":  {
+                                                                                    "rate":  1.8
+                                                                                },
+                                                            "get_no_ack_details":  {
+                                                                                       "rate":  0.0
+                                                                                   },
+                                                            "get_details":  {
+                                                                                "rate":  0.0
+                                                                            },
+                                                            "drop_unroutable_details":  {
+                                                                                            "rate":  0.0
+                                                                                        },
+                                                            "return_unroutable_details":  {
+                                                                                              "rate":  0.0
+                                                                                          },
+                                                            "confirm_details":  {
+                                                                                    "rate":  0.0
+                                                                                },
+                                                            "publish_details":  {
+                                                                                    "rate":  1.8
+                                                                                },
+                                                            "disk_writes_details":  {
+                                                                                        "rate":  0.0
+                                                                                    },
+                                                            "disk_reads_details":  {
+                                                                                       "rate":  0.0
+                                                                                   }
+                                                        },
+                                      "churn_rates":  {
+                                                          "connection_closed":  9,
+                                                          "queue_deleted":  0,
+                                                          "queue_created":  4,
+                                                          "channel_created":  18,
+                                                          "channel_closed":  13,
+                                                          "queue_declared":  28,
+                                                          "connection_created":  7,
+                                                          "queue_deleted_details":  {
+                                                                                        "rate":  0.0
+                                                                                    },
+                                                          "queue_created_details":  {
+                                                                                        "rate":  0.0
+                                                                                    },
+                                                          "queue_declared_details":  {
+                                                                                         "rate":  0.0
+                                                                                     },
+                                                          "channel_closed_details":  {
+                                                                                         "rate":  0.0
+                                                                                     },
+                                                          "channel_created_details":  {
+                                                                                          "rate":  0.0
+                                                                                      },
+                                                          "connection_closed_details":  {
+                                                                                            "rate":  0.0
+                                                                                        },
+                                                          "connection_created_details":  {
+                                                                                             "rate":  0.0
+                                                                                         }
+                                                      },
+                                      "queue_totals":  {
+                                                           "messages":  0,
+                                                           "messages_ready":  0,
+                                                           "messages_unacknowledged":  0,
+                                                           "messages_details":  {
+                                                                                    "rate":  0.0
+                                                                                },
+                                                           "messages_unacknowledged_details":  {
+                                                                                                   "rate":  0.0
+                                                                                               },
+                                                           "messages_ready_details":  {
+                                                                                          "rate":  0.0
+                                                                                      }
+                                                       },
+                                      "object_totals":  {
+                                                            "consumers":  3,
+                                                            "exchanges":  8,
+                                                            "queues":  4,
+                                                            "connections":  2,
+                                                            "channels":  5
+                                                        },
+                                      "statistics_db_event_queue":  0,
+                                      "node":  "rabbit@5d7f78cd70ca",
+                                      "listeners":  [
+                                                        {
+                                                            "node":  "rabbit@5d7f78cd70ca",
+                                                            "protocol":  "amqp",
+                                                            "ip_address":  "::",
+                                                            "port":  5672,
+                                                            "socket_opts":  {
+                                                                                "backlog":  128,
+                                                                                "nodelay":  true,
+                                                                                "linger":  [
+                                                                                               true,
+                                                                                               0
+                                                                                           ],
+                                                                                "exit_on_close":  false
+                                                                            }
+                                                        },
+                                                        {
+                                                            "node":  "rabbit@5d7f78cd70ca",
+                                                            "protocol":  "clustering",
+                                                            "ip_address":  "::",
+                                                            "port":  25672,
+                                                            "socket_opts":  [
+
+                                                                            ]
+                                                        },
+                                                        {
+                                                            "node":  "rabbit@5d7f78cd70ca",
+                                                            "protocol":  "http",
+                                                            "ip_address":  "::",
+                                                            "port":  15672,
+                                                            "socket_opts":  {
+                                                                                "cowboy_opts":  {
+                                                                                                    "sendfile":  false
+                                                                                                },
+                                                                                "port":  15672
+                                                                            }
+                                                        },
+                                                        {
+                                                            "node":  "rabbit@5d7f78cd70ca",
+                                                            "protocol":  "http/prometheus",
+                                                            "ip_address":  "::",
+                                                            "port":  15692,
+                                                            "socket_opts":  {
+                                                                                "port":  15692,
+                                                                                "protocol":  "http/prometheus",
+                                                                                "cowboy_opts":  {
+                                                                                                    "sendfile":  false
+                                                                                                }
+                                                                            }
+                                                        }
+                                                    ],
+                                      "contexts":  [
+                                                       {
+                                                           "ssl_opts":  [
+
+                                                                        ],
+                                                           "node":  "rabbit@5d7f78cd70ca",
+                                                           "description":  "RabbitMQ Management",
+                                                           "path":  "/",
+                                                           "cowboy_opts":  "[{sendfile,false}]",
+                                                           "port":  "15672"
+                                                       },
+                                                       {
+                                                           "ssl_opts":  [
+
+                                                                        ],
+                                                           "node":  "rabbit@5d7f78cd70ca",
+                                                           "description":  "RabbitMQ Prometheus",
+                                                           "path":  "/",
+                                                           "port":  "15692",
+                                                           "protocol":  "\u0027http/prometheus\u0027",
+                                                           "cowboy_opts":  "[{sendfile,false}]"
+                                                       }
+                                                   ]
+                                  },
+                     "orderPlacedQueue":  {
+                                              "consumer_details":  [
+                                                                       {
+                                                                           "arguments":  {
+
+                                                                                         },
+                                                                           "channel_details":  {
+                                                                                                   "connection_name":  "172.18.0.9:34250 -\u003e 172.18.0.4:5672",
+                                                                                                   "name":  "172.18.0.9:34250 -\u003e 172.18.0.4:5672 (1)",
+                                                                                                   "node":  "rabbit@5d7f78cd70ca",
+                                                                                                   "number":  1,
+                                                                                                   "peer_host":  "172.18.0.9",
+                                                                                                   "peer_port":  34250,
+                                                                                                   "user":  "guest"
+                                                                                               },
+                                                                           "ack_required":  true,
+                                                                           "active":  true,
+                                                                           "activity_status":  "up",
+                                                                           "consumer_tag":  "amq.ctag-0KbShI9uD-x0AKelrfQ6BA",
+                                                                           "consumer_timeout":  1800000,
+                                                                           "exclusive":  false,
+                                                                           "prefetch_count":  250,
+                                                                           "queue":  {
+                                                                                         "name":  "delivery.order-placed",
+                                                                                         "vhost":  "/"
+                                                                                     }
+                                                                       }
+                                                                   ],
+                                              "arguments":  {
+
+                                                            },
+                                              "auto_delete":  false,
+                                              "consumer_capacity":  1.0,
+                                              "consumer_utilisation":  1.0,
+                                              "consumers":  1,
+                                              "deliveries":  [
+
+                                                             ],
+                                              "durable":  true,
+                                              "effective_policy_definition":  {
+
+                                                                              },
+                                              "exclusive":  false,
+                                              "exclusive_consumer_tag":  null,
+                                              "garbage_collection":  {
+                                                                         "fullsweep_after":  65535,
+                                                                         "max_heap_size":  0,
+                                                                         "min_bin_vheap_size":  46422,
+                                                                         "min_heap_size":  233,
+                                                                         "minor_gcs":  35
+                                                                     },
+                                              "head_message_timestamp":  null,
+                                              "idle_since":  "2026-04-10T14:40:12.747+00:00",
+                                              "incoming":  [
+
+                                                           ],
+                                              "memory":  35216,
+                                              "message_bytes":  0,
+                                              "message_bytes_paged_out":  0,
+                                              "message_bytes_persistent":  0,
+                                              "message_bytes_ram":  0,
+                                              "message_bytes_ready":  0,
+                                              "message_bytes_unacknowledged":  0,
+                                              "message_stats":  {
+                                                                    "ack":  25,
+                                                                    "ack_details":  {
+                                                                                        "rate":  1.8
+                                                                                    },
+                                                                    "deliver":  25,
+                                                                    "deliver_details":  {
+                                                                                            "rate":  1.8
+                                                                                        },
+                                                                    "deliver_get":  25,
+                                                                    "deliver_get_details":  {
+                                                                                                "rate":  1.8
+                                                                                            },
+                                                                    "deliver_no_ack":  0,
+                                                                    "deliver_no_ack_details":  {
+                                                                                                   "rate":  0.0
+                                                                                               },
+                                                                    "get":  0,
+                                                                    "get_details":  {
+                                                                                        "rate":  0.0
+                                                                                    },
+                                                                    "get_empty":  0,
+                                                                    "get_empty_details":  {
+                                                                                              "rate":  0.0
+                                                                                          },
+                                                                    "get_no_ack":  0,
+                                                                    "get_no_ack_details":  {
+                                                                                               "rate":  0.0
+                                                                                           },
+                                                                    "publish":  25,
+                                                                    "publish_details":  {
+                                                                                            "rate":  1.8
+                                                                                        },
+                                                                    "redeliver":  0,
+                                                                    "redeliver_details":  {
+                                                                                              "rate":  0.0
+                                                                                          }
+                                                                },
+                                              "messages":  0,
+                                              "messages_details":  {
+                                                                       "rate":  0.0
+                                                                   },
+                                              "messages_paged_out":  0,
+                                              "messages_persistent":  0,
+                                              "messages_ram":  0,
+                                              "messages_ready":  0,
+                                              "messages_ready_details":  {
+                                                                             "rate":  0.0
+                                                                         },
+                                              "messages_ready_ram":  0,
+                                              "messages_unacknowledged":  0,
+                                              "messages_unacknowledged_details":  {
+                                                                                      "rate":  0.0
+                                                                                  },
+                                              "messages_unacknowledged_ram":  0,
+                                              "name":  "delivery.order-placed",
+                                              "node":  "rabbit@5d7f78cd70ca",
+                                              "operator_policy":  null,
+                                              "policy":  null,
+                                              "recoverable_slaves":  null,
+                                              "reductions":  74464,
+                                              "reductions_details":  {
+                                                                         "rate":  0.0
+                                                                     },
+                                              "single_active_consumer_tag":  null,
+                                              "state":  "running",
+                                              "storage_version":  1,
+                                              "type":  "classic",
+                                              "vhost":  "/"
+                                          }
+                 }
+}

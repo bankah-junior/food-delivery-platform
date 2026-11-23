@@ -1,0 +1,269 @@
+openapi: 3.0.3
+info:
+  title: Restaurant Service API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8082
+  - url: http://localhost:8080
+paths:
+  /api/restaurants/search/all:
+    get:
+      summary: List active restaurants
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestaurantResponse'
+  /api/restaurants/search/city/{city}:
+    get:
+      summary: Search restaurants by city
+      parameters:
+        - name: city
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestaurantResponse'
+  /api/restaurants/search/cuisine/{type}:
+    get:
+      summary: Search restaurants by cuisine
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/RestaurantResponse'
+  /api/restaurants/{id}:
+    get:
+      summary: Get restaurant by id
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantResponse'
+  /api/restaurants/{id}/menu:
+    get:
+      summary: Get restaurant menu
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MenuItemResponse'
+  /api/restaurants:
+    post:
+      summary: Create restaurant
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RestaurantRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RestaurantResponse'
+  /api/restaurants/{restaurantId}/menu:
+    post:
+      summary: Add menu item
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - name: restaurantId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MenuItemRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemResponse'
+  /api/restaurants/menu/{itemId}:
+    put:
+      summary: Update menu item
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MenuItemRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MenuItemResponse'
+  /api/restaurants/menu/{itemId}/toggle:
+    patch:
+      summary: Toggle menu item availability
+      parameters:
+        - $ref: '#/components/parameters/XUserId'
+        - name: itemId
+          in: path
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        '204':
+          description: No Content
+components:
+  parameters:
+    XUserId:
+      name: X-User-Id
+      in: header
+      required: true
+      schema:
+        type: integer
+        format: int64
+  schemas:
+    RestaurantRequest:
+      type: object
+      required: [name, cuisineType, address, city]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        cuisineType:
+          type: string
+        address:
+          type: string
+        city:
+          type: string
+        phone:
+          type: string
+        estimatedDeliveryMinutes:
+          type: integer
+    RestaurantResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+        cuisineType:
+          type: string
+        address:
+          type: string
+        city:
+          type: string
+        phone:
+          type: string
+        active:
+          type: boolean
+        rating:
+          type: number
+          format: double
+        estimatedDeliveryMinutes:
+          type: integer
+        menuItemCount:
+          type: integer
+        ownerId:
+          type: integer
+          format: int64
+    MenuItemRequest:
+      type: object
+      required: [name, price]
+      properties:
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+        category:
+          type: string
+        imageUrl:
+          type: string
+    MenuItemResponse:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        description:
+          type: string
+        price:
+          type: number
+          format: double
+        category:
+          type: string
+        available:
+          type: boolean
+        imageUrl:
+          type: string
+        restaurantId:
+          type: integer
+          format: int64
+        restaurantName:
+          type: string
